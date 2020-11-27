@@ -1,4 +1,6 @@
+@import "reset";
 @import "modules/header";
+@import "registrations/new";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -21,7 +23,7 @@
 
 .Wrapper {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   margin: auto;
   position: relative;
   padding-bottom: 50px;
