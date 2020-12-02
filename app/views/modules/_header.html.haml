@@ -1,0 +1,27 @@
+%header
+  .container
+    .header-center
+      %ul
+        %li
+          = link_to "トップページ", events_path, method: :get, class: "btn"
+        %li 
+          = link_to "取引一覧","#", method: :get, class: "btn"
+    .header-right
+      - if user_signed_in?
+        %ul
+          %li
+            = link_to "マイページ", "/users/#{current_user.id}", class: 'ToMypage'
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Logout'
+        -# - if @user.image?
+        -#   = image_tag @user.image.url, class: "user-circle"
+        -# - else
+        -#   = icon('far', 'smile-wink', class: "user-circle" )
+      - else
+        %ul
+          %li
+            = link_to "ログイン", new_user_session_path, class: "post"
+          %li
+            = link_to "新規登録", new_user_registration_path, class: "post"
+
+
