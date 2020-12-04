@@ -1,0 +1,22 @@
+.Top-Field {
+  height: 250px;
+  background-color: pink;
+}
+
+.Top-Tab {
+  height: 50px;
+  background-color: green;
+}
+.Split {
+  font-size: 1.5rem;
+  display: flex;
+  min-height: 100vh;
+
+  .EventsField {
+    width: 900px;
+    flex: 1;
+    margin: 0 auto;
+    background-color: gray;
+    height: 100vh;
+  }
+}

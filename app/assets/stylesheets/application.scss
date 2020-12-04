@@ -2,8 +2,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/header";
+@import "modules/aside";
 @import "registrations/new";
 @import "sessions/new";
+@import "events/index";
+@import "users/show";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
