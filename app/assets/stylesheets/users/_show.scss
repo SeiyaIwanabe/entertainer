@@ -1,5 +1,5 @@
 .TopIntroduction {
-  width: 60%;
+  width: 60vw;
   height: 40%;
   margin: 0 auto;
   border-bottom: 1px solid lightgray;
@@ -18,6 +18,77 @@
     }
     .user-introduction {
       margin-top: 10px;
+    }
+  }
+  .Edit-link {
+    display: block;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .Edit-link-btn {
+      display: block;
+      text-decoration: none;
+      border: 1px solid lightgray;
+      color: #666666;
+      border-radius: 10px;
+      height: 30px;
+      width: 150px;
+      text-align: center;
+      line-height: 30px;
+      font-size: small;
+    }
+    .Edit-link-btn:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.TabArea {
+  margin-top: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  &__inner {
+    .tab_menu {
+      /*タブの基本スタイル*/
+      border-bottom: solid 3px #5bc0de;
+      // background-color: #eee;
+      margin: 0;
+      padding: 0 1rem;
+      color: #333333;
+
+      /*選択されていないタブは透明色*/
+      background-color: transport;
+    }
+    .tab_contains {
+      /*選択されていないコンテンツは非表示*/
+      display: none;
+    }
+    .tab_radio:checked + .tab_menu {
+      /*選択されているタブは白背景*/
+      /* タブコンテンツの上線にかぶせて隠す */
+      background-color: white;
+    }
+    #tab_radio_A:checked ~ #tab_contains_A,
+    #tab_radio_B:checked ~ #tab_contains_B,
+    #tab_radio_C:checked ~ #tab_contains_C {
+      display: block;
+
+      /*コンテンツの基本スタイル*/
+      width: 60vw;
+      border-bottom: 1px solid lightgray;
+      padding: 1rem;
+
+      /*選択されたタブで上線をかぶせる*/
+      //margin-top:-1px;
+      background-color: white;
+    }
+    .tab_radio {
+      /*ラジオボタンは表示しない*/
+      display: none;
     }
   }
 }

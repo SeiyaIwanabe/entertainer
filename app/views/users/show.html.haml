@@ -15,7 +15,28 @@
         最高のエンターテイメントを提供します。
   
   .Edit-link
-    = link_to 
+    = link_to "プロフィールを編集", edit_user_path(current_user), class: "Edit-link-btn"
+
+.TabArea
+  .TabArea__inner
+    / タブメニュー
+    %input#tab_radio_A.tab_radio{checked: "checked",name: "tab_item", type: "radio"}/
+    %label.tab_menu{for: "tab_radio_A"} 参加イベント
+    %input#tab_radio_B.tab_radio{name: "tab_item", type: "radio"}/
+    %label.tab_menu{for: "tab_radio_B"} 主催イベント
+    %input#tab_radio_C.tab_radio{name: "tab_item", type: "radio"}/
+    %label.tab_menu{for: "tab_radio_C"} フォロー
+    / タブA 表示内容
+    #tab_contains_A.tab_contains
+      %p HTMLは、コンピュータが理解できる文章構造を作ります。
+    / タブB 表示内容
+    #tab_contains_B.tab_contains
+      %p CSSは、HTML文章の見た目にデザインを指定していきます。
+    / タブC 表示内容
+    #tab_contains_C.tab_contains
+      %p JavaScriptは、ユーザーの動きに反応したり、複雑なことをします。
+
+
 
      
   
