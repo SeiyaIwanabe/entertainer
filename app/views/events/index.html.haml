@@ -1,11 +1,26 @@
-= render partial: 'modules/header'
+-# = render partial: 'modules/header'
 
 .Top-Field
+  画像とアプリの説明を表示する
 
-.Top-Tab
+.TabArea
+  .TabArea__inner
+    / タブメニュー
+    %input#tab_radio_A.tab_radio{checked: "checked",name: "tab_item", type: "radio"}/
+    %label.tab_menu{for: "tab_radio_A"} イベント一覧
+    %input#tab_radio_B.tab_radio{name: "tab_item", type: "radio"}/
+    %label.tab_menu{for: "tab_radio_B"} 主催者一覧
+    -# %input#tab_radio_C.tab_radio{name: "tab_item", type: "radio"}/
+    -# %label.tab_menu{for: "tab_radio_C"} フォロー
+    / タブA 表示内容
+    #tab_contains_A.tab_contains
+      %p HTMLは、コンピュータが理解できる文章構造を作ります。
+    / タブB 表示内容
+    #tab_contains_B.tab_contains
+      %p CSSは、HTML文章の見た目にデザインを指定していきます。
+    / タブC 表示内容
+    -# #tab_contains_C.tab_contains
+    -#   %p JavaScriptは、ユーザーの動きに反応したり、複雑なことをします。
 
-.Split
-  = render partial: 'modules/aside'
 
-  .EventsField
-    Main
+-# = render partial: 'modules/footer'
