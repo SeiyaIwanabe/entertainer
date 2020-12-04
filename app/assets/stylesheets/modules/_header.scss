@@ -12,43 +12,6 @@ header {
     align-items: center;
 
     .header-left {
-      width: 20%;
-
-      .user-nav {
-        display: flex;
-        margin: 0 auto;
-        width: 50%;
-        position: relative;
-        cursor: pointer;
-        border: none;
-
-        .user-circle {
-          display: block;
-          padding: 7px;
-        }
-        .user-name {
-          color: #666666;
-          margin-left: 10px;
-          font-weight: bold;
-          font-size: large;
-        }
-      }
-    }
-    .header-center {
-      width: 10%;
-      display: flex;
-
-      .application-icon {
-        padding: 9px;
-        font-size: large;
-      }
-      .title {
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-    }
-
-    .header-right {
       transition: all 0.5s;
       width: 20%;
 
@@ -142,6 +105,41 @@ header {
             outline-color: transparent;
             outline-offset: 12px;
             text-shadow: 2px 2px 3px #000;
+          }
+        }
+      }
+    }
+
+    .header-center {
+      width: 10%;
+      display: flex;
+
+      .application-icon {
+        padding: 9px;
+        font-size: large;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+
+    .header-right {
+      width: 20%;
+
+      &__outer {
+        display: flex;
+        justify-content: space-evenly;
+
+        &--inner {
+          display: block;
+
+          .event-action-btn {
+            text-decoration: none;
+            color: #666666;
+          }
+          .event-action-btn:hover {
+            border: 1px solid lightgray;
           }
         }
       }

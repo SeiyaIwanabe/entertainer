@@ -1,21 +1,6 @@
 %header
   .container
     .header-left
-      %button.user-nav
-        - if @user.icon?
-          = image_tag @user.icon.url, class: "user-circle"
-        - else
-          = icon("fas", "user", class: "user-circle")
-        %p.user-name
-          = @user.nickname
-
-
-    .header-center
-      = icon("fas", "star", class: "application-icon")
-      %h2.title
-        Entertainer
-      
-    .header-right
       - if user_signed_in?
         %ul
           %li
@@ -28,5 +13,20 @@
             = link_to "ログイン", new_user_session_path, class: "post"
           %li
             = link_to "新規登録", new_user_registration_path, class: "post"
+
+    .header-center
+      = icon("fas", "star", class: "application-icon")
+      %h2.title
+        Entertainer
+
+    .header-right
+      %ul.header-right__outer
+        %li.header-right__outer--inner
+          = link_to " イベントを探す", "#", class: "event-action-btn"
+        %li.header-right__outer--inner
+          = link_to "主催する", "#", class: "event-action-btn"
+
+
+      
 
 
