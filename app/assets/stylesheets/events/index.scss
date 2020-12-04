@@ -3,20 +3,51 @@
   background-color: pink;
 }
 
-.Top-Tab {
-  height: 50px;
-  background-color: green;
-}
-.Split {
-  font-size: 1.5rem;
+.TabArea {
+  margin-top: 10px;
+  height: 100vh;
   display: flex;
-  min-height: 100vh;
+  justify-content: center;
+  background-color: lightgray;
 
-  .EventsField {
-    width: 900px;
-    flex: 1;
-    margin: 0 auto;
-    background-color: gray;
-    height: 100vh;
+  &__inner {
+    .tab_menu {
+      /*タブの基本スタイル*/
+      border-bottom: solid 3px #5bc0de;
+      // background-color: #eee;
+      margin: 0;
+      padding: 0 1rem;
+      color: #333333;
+
+      /*選択されていないタブは透明色*/
+      background-color: transport;
+    }
+    .tab_contains {
+      /*選択されていないコンテンツは非表示*/
+      display: none;
+    }
+    .tab_radio:checked + .tab_menu {
+      /*選択されているタブは白背景*/
+      /* タブコンテンツの上線にかぶせて隠す */
+      background-color: white;
+    }
+    #tab_radio_A:checked ~ #tab_contains_A,
+    #tab_radio_B:checked ~ #tab_contains_B,
+    #tab_radio_C:checked ~ #tab_contains_C {
+      display: block;
+
+      /*コンテンツの基本スタイル*/
+      width: 60vw;
+      border-bottom: 1px solid lightgray;
+      padding: 1rem;
+
+      /*選択されたタブで上線をかぶせる*/
+      //margin-top:-1px;
+      background-color: white;
+    }
+    .tab_radio {
+      /*ラジオボタンは表示しない*/
+      display: none;
+    }
   }
 }
