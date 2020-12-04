@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    @user = User.find_by(params[:format])
   end
   
   private

@@ -1,11 +1,20 @@
 %header
   .container
+    .header-left
+      %button.user-nav
+        - if @user.icon?
+          = image_tag @user.icon.url, class: "user-circle"
+        - else
+          = icon("fas", "user", class: "user-circle")
+        %p.user-name
+          = @user.nickname
+
+
     .header-center
-      %ul
-        %li
-          = link_to "トップページ", events_path, method: :get, class: "btn"
-        %li 
-          = link_to "取引一覧","#", method: :get, class: "btn"
+      = icon("fas", "star", class: "application-icon")
+      %h2.title
+        Entertainer
+      
     .header-right
       - if user_signed_in?
         %ul
@@ -13,10 +22,6 @@
             = link_to "マイページ", "/users/#{current_user.id}", class: 'ToMypage'
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Logout'
-        -# - if @user.image?
-        -#   = image_tag @user.image.url, class: "user-circle"
-        -# - else
-        -#   = icon('far', 'smile-wink', class: "user-circle" )
       - else
         %ul
           %li

@@ -1,0 +1,15 @@
+%aside
+  %nav
+    %ul
+      %li
+        - if @user.icon?
+          = image_tag @user.icon.url, class: "user-circle"
+        - else
+          = icon("fas", "user", class: "user-circle")
+      %li
+        = @user.nickname
+      %li
+        = icon("fas", "user", class: "user-circle")
+        = link_to "プロフィール", user_path(current_user)
+  .sidefooter
+    サイドフッター
