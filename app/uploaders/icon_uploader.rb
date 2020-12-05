@@ -1,6 +1,9 @@
 class IconUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+
+  #リサイズ、画像形式を変更に必要
+  include CarrierWave::RMagick
+
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -44,4 +47,31 @@ class IconUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+
+  #サムネイルを生成
+  version :thumb do
+    process :resize_to_limit => [300, 300]
+  end
+
+  #JPGで保存
+  process :convert => 'jpg'
+
+  # jpg,jpeg,gif,pngのみ
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+
+  #ファイル名を変更し拡張子を同じにする
+  def filename
+    super.chomp(File.extname(super)) + '.jpg' 
+  end
+
+  #日付で保存
+  def filename
+    if original_filename.present?
+      time = Time.now
+      name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+      name.downcase
+    end
 end
