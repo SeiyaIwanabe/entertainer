@@ -1,0 +1,20 @@
+.UserEditField {
+  height: 80vh;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__Form {
+    height: 600px;
+    width: 400px;
+    background-color: #ffffff;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px gray;
+
+    .EditForm {
+      padding: 30px;
+    }
+  }
+}
