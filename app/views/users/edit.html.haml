@@ -1,1 +1,33 @@
-テスト
+.UserEditField
+  .UserEditField__Form
+    = form_with(model: @user, local: true, class: :EditForm) do |f|
+
+      .UserImage
+        - if @user.icon?
+          = f.label :image, class: "UserImage__icon" do
+            = f.file_field :image, class: "Hidden"
+        - else
+          = f.label :image, class: "UserImage__icon" do
+            = icon("fas", "user", class: "default-icon")
+            = f.file_field :image, class: "Hidden"
+      
+      .UserNameEdit
+        = f.label :nickname, "名前", class: "Form-label"
+        %p.attention
+          10文字以内でお好きな名前をご使用いただけます。
+        = f.text_field :nickname, placeholder: "名前を入力", maxlength: "10"
+
+      .UserSkiilEdit
+        = f.label :genre, "得意なパフォーマンス", class: "Form-label"
+        %p.attention
+          ご自身の得意なことを登録してください。
+        = f.text_field :genre, placeholder: "ダンス", maxlength: "10"
+
+        .UserIntroductionEdit
+        = f.label :introduction, "自己紹介", class: "Form-label"
+        %p.name-attention
+          140文字以内でご記入ください。
+        = f.text_area :introduction, placeholder: "最高のエンターテイメントを提供します。", maxlength: "140"
+
+        .Profile-area
+          = f.submit '変更', class: "profile-btn"
