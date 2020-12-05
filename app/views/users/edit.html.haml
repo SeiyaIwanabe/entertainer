@@ -4,12 +4,13 @@
 
       .UserImage
         - if @user.icon?
-          = f.label :image, class: "UserImage__icon" do
-            = f.file_field :image, class: "Hidden"
+          = f.label :icon, class: "UserImage__icon" do
+            = f.file_field :icon, class: "Hidden"
         - else
-          = f.label :image, class: "UserImage__icon" do
+          = f.label :icon, class: "UserImage__icon" do
             = icon("fas", "user", class: "default-icon")
-            = f.file_field :image, class: "Hidden"
+            = f.file_field :icon, class: "Hidden"
+            -# = image_tag @user.icon.url(:thumb)
       
       .UserNameEdit
         = f.label :nickname, "名前", class: "Form-label"
