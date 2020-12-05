@@ -27,7 +27,7 @@
         = f.label :introduction, "自己紹介", class: "Form-label"
         %p.name-attention
           140文字以内でご記入ください。
-        = f.text_area :introduction, placeholder: "最高のエンターテイメントを提供します。", maxlength: "140"
+        = f.text_area :introduction, placeholder: "最高のエンターテイメントを提供します。", maxlength: "140", size: "30x10"
 
         .Profile-area
           = f.submit '変更', class: "profile-btn"
