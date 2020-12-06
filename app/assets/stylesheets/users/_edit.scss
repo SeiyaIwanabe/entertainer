@@ -1,13 +1,13 @@
 .UserEditField {
-  height: 80vh;
+  height: 100vh;
   background-color: #f0f2f5;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  &__Form {
-    height: 600px;
-    width: 400px;
+  &__outline {
+    height: 700px;
+    width: 450px;
     background-color: #ffffff;
     border: 1px solid white;
     border-radius: 10px;
@@ -15,6 +15,55 @@
 
     .EditForm {
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .edit-item {
+        margin-bottom: 10px;
+
+        .Form-label {
+          color: #65676b;
+          font-weight: bold;
+          font-size: larger;
+        }
+        .attention {
+          padding: 5px 0;
+          font-size: medium;
+        }
+        input {
+          width: 100%;
+          height: 60px;
+          border: none;
+          border: 1px solid lightgray;
+          border-radius: 10px;
+        }
+        .introduce-area {
+          width: 100%;
+          height: 180px;
+          border: none;
+          border: 1px solid lightgray;
+          border-radius: 10px;
+        }
+      }
+      .Profile-area {
+        .profile-btn {
+          display: block;
+          margin: 0 auto;
+          margin-top: 30px;
+          width: 200px;
+          height: 50px;
+          background-color: #e4e6ea;
+          border-radius: 10px;
+          border: none;
+          color: #65676b;
+          cursor: pointer;
+          font-weight: bold;
+        }
+        .profile-btn:hover {
+          opacity: 0.7;
+        }
+      }
     }
   }
 }
