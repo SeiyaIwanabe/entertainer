@@ -146,3 +146,121 @@ header {
     }
   }
 }
+@media screen and (min-width: 1001px) {
+  .global-nav {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+  .black-bg {
+    display: none;
+  }
+}
+
+/* ハンバーガーメニュー */
+@media screen and (max-width: 1000px) {
+  .header-left {
+    display: none;
+  }
+  .header-center {
+    margin: 0 auto;
+  }
+  .global-nav {
+    position: fixed;
+    left: -320px; /* これで隠れる */
+    top: 0;
+    width: 300px; /* スマホに収まるくらい */
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #fff;
+    transition: all 0.6s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+
+    .global-nav__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .global-nav__item {
+        text-align: center;
+        padding: 0 14px;
+
+        .global-nav__item a {
+          text-decoration: none;
+          display: block;
+          padding: 8px 0;
+          border-bottom: 1px solid #eee;
+          text-decoration: none;
+          color: #111;
+        }
+        .global-nav__item a:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    cursor: pointer;
+    z-index: 300;
+
+    .hamburger__line {
+      position: absolute;
+      left: 11px;
+      width: 18px;
+      height: 1px;
+      background-color: #111;
+      transition: all 0.6s;
+    }
+    .hamburger__line--1 {
+      top: 14px;
+    }
+    .hamburger__line--2 {
+      top: 20px;
+    }
+    .hamburger__line--3 {
+      top: 26px;
+    }
+  }
+
+  .black-bg {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    cursor: pointer;
+  }
+  /* 表示された時用のCSS */
+  .nav-open .global-nav {
+    left: 0;
+  }
+  .nav-open .black-bg {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  .nav-open .hamburger__line--1 {
+    transform: rotate(405deg);
+    top: 20px;
+  }
+  .nav-open .hamburger__line--2 {
+    width: 0;
+    right: 50%;
+  }
+  .nav-open .hamburger__line--3 {
+    transform: rotate(-405deg);
+    top: 20px;
+  }
+}
