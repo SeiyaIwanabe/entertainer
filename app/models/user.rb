@@ -6,6 +6,12 @@ class User < ApplicationRecord
   
   mount_uploader :icon, IconUploader
 
+  validates :nickname, presence: true
+  validates :nickname, length: { maximum: 10 }
+  validates :genre, presence: true
+  validates :genre, length: { maximum: 10 }
+  validates :introduction, length: { maximum: 140 }
+
   def self.guest
     find_or_create_by!(nickname: "ゲスト", email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
