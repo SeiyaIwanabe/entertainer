@@ -1,146 +1,110 @@
-header {
-  height: 80px;
-  width: 100vw;
+.header {
+  height: 60px;
   background-color: burlywood;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
-  .container {
-    width: 100vw;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  .local-nav {
+    position: fixed;
+    left: -320px; /* これで隠れる */
+    top: 0;
+    width: 300px; /* スマホに収まるくらい */
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #fff;
+    transition: all 0.6s;
+    z-index: 200;
 
-    .header-left {
-      transition: all 0.5s;
-      width: 20%;
+    .local-nav__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-      ul {
-        display: flex;
-        justify-content: space-around;
+      .local-nav__item {
+        text-align: center;
+        padding: 0 14px;
 
-        li {
-          .ToMypage {
-            color: #fff;
-            display: inline-block;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 45px;
-            width: 100px;
-            position: relative;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            outline: 1px solid;
-            outline-color: rgba(255, 255, 255, 0.5);
-            outline-offset: 0px;
-            text-shadow: none;
-            transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
-            text-align: center;
-            // border-radius: 50%;
-          }
-
-          .ToMypage:hover {
-            border-color: #fff;
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
-              0 0 20px rgba(255, 255, 255, 0.2);
-            outline-color: transparent;
-            outline-offset: 12px;
-            text-shadow: 2px 2px 3px #000;
-          }
-
-          .Logout {
-            color: #fff;
-            display: inline-block;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 45px;
-            width: 100px;
-            position: relative;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            outline: 1px solid;
-            outline-color: rgba(255, 255, 255, 0.5);
-            outline-offset: 0px;
-            text-shadow: none;
-            transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
-            text-align: center;
-            // border-radius: 50%;
-          }
-
-          .Logout:hover {
-            border-color: #fff;
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
-              0 0 20px rgba(255, 255, 255, 0.2);
-            outline-color: transparent;
-            outline-offset: 12px;
-            text-shadow: 2px 2px 3px #000;
-          }
-
-          .post {
-            color: #fff;
-            display: inline-block;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 45px;
-            width: 100px;
-            position: relative;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            outline: 1px solid;
-            outline-color: rgba(255, 255, 255, 0.5);
-            outline-offset: 0px;
-            text-shadow: none;
-            transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
-            text-align: center;
-            // border-radius: 50%;
-          }
-
-          .post:hover {
-            border-color: #fff;
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
-              0 0 20px rgba(255, 255, 255, 0.2);
-            outline-color: transparent;
-            outline-offset: 12px;
-            text-shadow: 2px 2px 3px #000;
-          }
+        .local-nav__item a {
+          text-decoration: none;
+          display: block;
+          padding: 8px 0;
+          border-bottom: 1px solid #eee;
+          text-decoration: none;
+          color: #111;
+        }
+        .local-nav__item a:hover {
+          background-color: #eee;
         }
       }
     }
+  }
 
-    .header-center {
-      width: 10%;
-      display: flex;
+  .btn-menu {
+    display: block;
+    border: 1px solid #999;
+    background: transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 300;
+  }
 
-      .application-icon {
-        padding: 9px;
-        font-size: large;
-      }
-      .title {
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
+  .black-effect {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    cursor: pointer;
+  }
+  /* 表示された時用のCSS */
+  .nav-open-main .local-nav {
+    left: 0;
+  }
+  .nav-open-main .black-effect {
+    opacity: 0.8;
+    visibility: visible;
+  }
+
+  &__center {
+    width: 10%;
+    display: flex;
+
+    .application-icon {
+      padding: 9px;
+      font-size: large;
     }
+    .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
 
-    .header-right {
-      width: 20%;
+  &__right {
+    width: 20%;
 
-      &__outer {
-        display: flex;
-        justify-content: space-evenly;
+    &--outer {
+      display: flex;
+      justify-content: space-evenly;
 
-        &--inner {
-          display: block;
+      .inner {
+        display: block;
 
-          .event-action-btn {
-            text-decoration: none;
-            color: #666666;
-          }
-          .event-action-btn:hover {
-            border: 1px solid lightgray;
-          }
+        .event-action-btn {
+          text-decoration: none;
+          color: #666666;
+          font-weight: bold;
+          font-size: large;
+        }
+        .event-action-btn:hover {
+          opacity: 0.5;
         }
       }
     }
@@ -160,11 +124,8 @@ header {
 
 /* ハンバーガーメニュー */
 @media screen and (max-width: 1000px) {
-  .header-left {
+  .btn-menu {
     display: none;
-  }
-  .header-center {
-    margin: 0 auto;
   }
   .global-nav {
     position: fixed;
@@ -176,7 +137,6 @@ header {
     background-color: #fff;
     transition: all 0.6s;
     z-index: 200;
-    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
 
     .global-nav__list {
       margin: 0;
@@ -206,27 +166,27 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    width: 50px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 50px; /* クリックしやすいようにちゃんと高さを指定する */
     cursor: pointer;
     z-index: 300;
 
     .hamburger__line {
       position: absolute;
-      left: 11px;
-      width: 18px;
+      left: 15px;
+      width: 25px;
       height: 1px;
       background-color: #111;
       transition: all 0.6s;
     }
     .hamburger__line--1 {
-      top: 14px;
-    }
-    .hamburger__line--2 {
       top: 20px;
     }
+    .hamburger__line--2 {
+      top: 29px;
+    }
     .hamburger__line--3 {
-      top: 26px;
+      top: 38px;
     }
   }
 

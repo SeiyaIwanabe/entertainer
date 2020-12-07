@@ -1,54 +1,78 @@
-%header
-  .container
-    /* ハンバーガーメニュー
-    %nav.global-nav
-      %ul.global-nav__list
-        - if user_signed_in?
-          %li.global-nav__item
-            = link_to "マイページ", user_path(current_user)
-          %li.global-nav__item
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-        - else
-          %li.global-nav__item
-            = link_to "ログイン", new_user_session_path
-          %li.global-nav__item
-            = link_to "新規登録", new_user_registration_path
-    %div#js-hamburger.hamburger
-      %span.hamburger__line.hamburger__line--1
-      %span.hamburger__line.hamburger__line--2
-      %span.hamburger__line.hamburger__line--3
-    %div#js-black-bg.black-bg
-      
-    .header-left
+%header.header
+  %nav.local-nav
+    %ul.local-nav-list
       - if user_signed_in?
-        %ul
-          %li
-            = link_to "マイページ", user_path(current_user), class: 'ToMypage'
-          %li
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Logout'
-            = @user.nickname
+        %li.local-nav__item
+          = link_to "マイページ", user_path(current_user)
+        %li.local-nav__item
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
       - else
-        %ul
-          %li
-            = link_to "ログイン", new_user_session_path, class: "post"
-          %li
-            = link_to "新規登録", new_user_registration_path, class: "post"
-          %li
-            = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"post"
+        %li.local-nav__item
+          = link_to "ログイン", new_user_session_path
+        %li.local-nav__item
+          = link_to "新規登録", new_user_registration_path
+        %li.local-nav__item
+          = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"post"
+  %button#js-button.btn-menu
+    - if user_signed_in?
+      - if @user.icon?
+        = image_tag @user.icon.url
+      - else
+        = icon("fas", "user", class: "user-icon")
+      %p.user-name
+        = @user.nickname
+    - else
+      = icon("fas", "user", class: "user-icon")
+      = link_to "ログイン", new_user_session_path
+  %div#black-effect.black-effect
 
-    .header-center
-      = icon("fas", "star", class: "application-icon")
-      %h2.title
-        Entertainer
+  %nav.global-nav
+    %ul.global-nav__list
+      - if user_signed_in?
+        %li.global-nav__item
+          = link_to "マイページ", user_path(current_user)
+        %li.global-nav__item
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %li.global-nav__item
+          = link_to "ログイン", new_user_session_path
+        %li.global-nav__item
+          = link_to "新規登録", new_user_registration_path
+        %li.global-nav__item
+          = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"post"
 
-    .header-right
-      %ul.header-right__outer
-        %li.header-right__outer--inner
-          = link_to " イベントを探す", root_path, class: "event-action-btn"
-        %li.header-right__outer--inner
-          = link_to "主催する", "#", class: "event-action-btn"
+  %div#js-hamburger.hamburger
+    %span.hamburger__line.hamburger__line--1
+    %span.hamburger__line.hamburger__line--2
+    %span.hamburger__line.hamburger__line--3
+  %div#js-black-bg.black-bg
+    
+    -# - if user_signed_in?
+    -#   %ul
+    -#     %li
+    -#       = link_to "マイページ", user_path(current_user), class: 'user-action'
+    -#     %li
+    -#       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'user-action'
+    -# - else
+    -#   -# %ul
+    -#   -#   %li
+    -#   -#     = link_to "ログイン", new_user_session_path, class: user-action"
+    -#   -#   %li
+    -#   -#     = link_to "新規登録", new_user_registration_path, class: "user-action"
+    -#     %li
+    -#       = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"user-action"
 
 
-      
+        
 
+  .header__center
+    = icon("fas", "star", class: "application-icon")
+    %h2.title
+      Entertainer
 
+  .header__right
+    %ul.header__right--outer
+      %li.inner
+        = link_to " イベントを探す", root_path, class: "event-action-btn"
+      %li.inner
+        = link_to "主催する", "#", class: "event-action-btn"
