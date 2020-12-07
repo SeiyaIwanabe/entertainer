@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def index
     @user = User.find_by(params[:format])
   end
-  
+
   private
   def move_to_index
     unless user_signed_in?
