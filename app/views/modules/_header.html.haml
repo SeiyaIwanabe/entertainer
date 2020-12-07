@@ -26,6 +26,7 @@
             = link_to "マイページ", user_path(current_user), class: 'ToMypage'
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Logout'
+            = @user.nickname
       - else
         %ul
           %li
