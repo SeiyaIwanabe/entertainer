@@ -1,69 +1,32 @@
 %header.header
-  %nav.local-nav
-    %ul.local-nav-list
+  #nav-drawer
+  %input#nav-input.nav-unshown{:type => "checkbox"}/
+  %label#nav-open{:for => "nav-input"}
+    %span
+  %label#nav-close.nav-unshown{:for => "nav-input"}
+  #nav-content 
+    .User-info
+      -# - if @user.icon?
+      -#   = image_tag @user.icon.url
+      -# - else
+      -#   = icon("fas", "user", class: "user-icon")
+      -# %p.user-name
+      -#   = @user.nickname
+      
+    %ul.user-nav
       - if user_signed_in?
-        %li.local-nav__item
-          = link_to "マイページ", user_path(current_user)
-        %li.local-nav__item
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li.user-nav__item
+          = icon("fas", "user", class: "info-icon")
+          = link_to "プロフィール", user_path(current_user), class: "profile-link"
+        %li.user-nav__item
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
       - else
-        %li.local-nav__item
-          = link_to "ログイン", new_user_session_path
-        %li.local-nav__item
-          = link_to "新規登録", new_user_registration_path
-        %li.local-nav__item
-          = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"post"
-  %button#js-button.btn-menu
-    - if user_signed_in?
-      - if @user.icon?
-        = image_tag @user.icon.url
-      - else
-        = icon("fas", "user", class: "user-icon")
-      %p.user-name
-        = @user.nickname
-    - else
-      = icon("fas", "user", class: "user-icon")
-      = link_to "ログイン", new_user_session_path
-  %div#black-effect.black-effect
-
-  %nav.global-nav
-    %ul.global-nav__list
-      - if user_signed_in?
-        %li.global-nav__item
-          = link_to "マイページ", user_path(current_user)
-        %li.global-nav__item
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-      - else
-        %li.global-nav__item
-          = link_to "ログイン", new_user_session_path
-        %li.global-nav__item
-          = link_to "新規登録", new_user_registration_path
-        %li.global-nav__item
-          = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"post"
-
-  %div#js-hamburger.hamburger
-    %span.hamburger__line.hamburger__line--1
-    %span.hamburger__line.hamburger__line--2
-    %span.hamburger__line.hamburger__line--3
-  %div#js-black-bg.black-bg
-    
-    -# - if user_signed_in?
-    -#   %ul
-    -#     %li
-    -#       = link_to "マイページ", user_path(current_user), class: 'user-action'
-    -#     %li
-    -#       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'user-action'
-    -# - else
-    -#   -# %ul
-    -#   -#   %li
-    -#   -#     = link_to "ログイン", new_user_session_path, class: user-action"
-    -#   -#   %li
-    -#   -#     = link_to "新規登録", new_user_registration_path, class: "user-action"
-    -#     %li
-    -#       = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class:"user-action"
-
-
-        
+        %li.user-nav__item
+          = link_to "ログイン", new_user_session_path, class: "nav-link"
+        %li.user-nav__item
+          = link_to "新規登録", new_user_registration_path, class: "nav-link"
+        %li.user-nav__item
+          = link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "nav-link"
 
   .header__center
     = icon("fas", "star", class: "application-icon")
