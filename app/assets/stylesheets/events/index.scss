@@ -1,10 +1,36 @@
-.Top-Field {
+.wrap-video {
   height: 250px;
-  background-color: pink;
+  position: relative;
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /*上下左右中央寄せ*/
+    text-align: center;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+    .headline {
+      font-size: 20px;
+    }
+  }
+  // .top-image {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  .top-movie {
+    width: 100vw;
+    height: 100%;
+  }
 }
 
 .TabArea {
-  margin-top: 10px;
+  padding-top: 10px;
   height: 100vh;
   display: flex;
   justify-content: center;

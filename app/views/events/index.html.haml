@@ -1,7 +1,10 @@
--# = render partial: 'modules/header'
+.wrap-video
+  .text
+    %p full screen video !
+    %p.headline 背景に動画を表示してみる
+  = video_tag "/assets/videos/top.mp4", playsinline: true, controls: false, autoplay: true, loop: true, muted: true,  class: "top-movie"
 
-.Top-Field
-  画像とアプリの説明を表示する
+
 
 .TabArea
   .TabArea__inner
@@ -21,6 +24,3 @@
     / タブC 表示内容
     -# #tab_contains_C.tab_contains
     -#   %p JavaScriptは、ユーザーの動きに反応したり、複雑なことをします。
-
-
--# = render partial: 'modules/footer'
