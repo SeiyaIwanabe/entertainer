@@ -2,7 +2,7 @@
   .text
     %p full screen video !
     %p.headline 背景に動画を表示してみる
-  %video{:autoplay => "", :loop => "", :muted => "", :playinline => "", :src => "videos/entertainer-top.mp4"}
+  = video_tag "/assets/videos/top.mp4", playsinline: true, controls: false, autoplay: true, loop: true, muted: true,  class: "top-movie"
 
 
 
@@ -24,6 +24,3 @@
     / タブC 表示内容
     -# #tab_contains_C.tab_contains
     -#   %p JavaScriptは、ユーザーの動きに反応したり、複雑なことをします。
-
-
--# = render partial: 'modules/footer'

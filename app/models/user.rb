@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :nickname, length: { maximum: 10 }
-  validates :genre, presence: true
+  # validates :genre, presence: true
   validates :genre, length: { maximum: 10 }
   validates :introduction, length: { maximum: 140 }
 
