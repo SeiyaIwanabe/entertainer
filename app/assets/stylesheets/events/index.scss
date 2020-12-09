@@ -10,21 +10,18 @@
     transform: translate(-50%, -50%); /*上下左右中央寄せ*/
     text-align: center;
 
-    p {
-      font-size: 16px;
+    .name {
+      font-size: 30px;
       font-weight: bold;
       color: white;
     }
     .headline {
       font-size: 20px;
+      color: white;
     }
   }
-  // .top-image {
-  //   width: 100%;
-  //   height: 100%;
-  // }
   .top-movie {
-    width: 100vw;
+    width: 100%;
     height: 100%;
   }
 }
