@@ -12,8 +12,8 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    if @event.save!
-      render 'index'
+    if @event.save
+      render 'create'
     else
       render 'new'
     end

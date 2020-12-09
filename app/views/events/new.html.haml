@@ -1,26 +1,28 @@
 .CreateEventField
   .CreateEventField__outline
     = form_with(model: @event, local: true, id: "new-event") do |f|
-      .create-item
-        = f.label :event_name, "イベント名", class: "Form-label"
-        = f.text_field :event_name,  maxlength: "20"
-      
-      .create-item
-        = f.label :datetime, "開催日時", class: "Form-label"
-        = f.date_field :datetime, class: 'form-control'
+      .top-area
+        .create-item-1
+          = f.label :event_name, "イベント名", class: "Form-label"
+          = f.text_field :event_name,  maxlength: "20", class: "name-field"
 
-      .create-item
-        = f.label :reward, "報酬", class: "Form-label"
-        = f.number_field :reward, autofocus: true, min: 5000, max: 100000
-      
-      .create-item
-        = f.label :place, "開催場所", class: "Form-label"
-        = f.text_field :place, maxlength: "30"
-      
+      .middle-area
+        .create-item-2
+          = f.label :datetime, "開催日時", class: "Form-label"
+          = f.date_field :datetime, class: 'form-control', class: "middle-field"
 
-      .create-item
-        = f.label :detail, "イベント詳細説明", class: "Form-label"
-        = f.text_area :detail, autofocus: true, autocomplete: "detail"
+        .create-item-2
+          = f.label :reward, "報酬", class: "Form-label"
+          = f.number_field :reward, autofocus: true, min: 5000, max: 100000, class: "middle-field"
+
+      .bottom-area
+        .create-item-3
+          = f.label :place, "開催場所", class: "Form-label"
+          = f.text_field :place, maxlength: "30", class: "place-field"
+      
+        .create-item-4
+          = f.label :detail, "イベント詳細説明", class: "Form-label"
+          = f.text_area :detail, autofocus: true, autocomplete: "detail", class: "detail-area"
       
       .create-btn-field
         = f.submit "作成", class: "create-btn"
