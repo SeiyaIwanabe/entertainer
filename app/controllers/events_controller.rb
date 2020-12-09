@@ -6,7 +6,13 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event
   end
+
+  def create
+    @event = Event.new(event_params)
+  end
+      
 
   private
   def move_to_index
@@ -14,5 +20,9 @@ class EventsController < ApplicationController
       redirect_to action: :index
     end
   end
-  
+
+  def event_params
+    params.require(:event).permit(:event_name, :datetime, :place, :reward, :detail).includes(:user)
+  end
+
 end
