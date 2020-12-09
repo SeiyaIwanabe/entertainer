@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
-  before_action :move_to_index, except: :index
+  # before_action :move_to_index, except: :index
 
   def index
     @user = current_user
+    @events = Event.all
   end
 
   def new
@@ -10,16 +11,21 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(event_params)
+    @event = Event.new(event_params)
+    if @event.save!
+      render 'index'
+    else
+      render 'new'
+    end
   end
       
 
   private
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
+  # def move_to_index
+  #   unless user_signed_in?
+  #     redirect_to action: :index
+  #   end
+  # end
 
   def event_params
     params.require(:event).permit(:event_name, :datetime, :place, :reward, :detail).merge(recruiter_id: current_user.id)
