@@ -1,0 +1,128 @@
+.CreateEventField {
+  width: 100vw;
+  height: 100vh;
+  background-color: #cccccc;
+  position: relative;
+
+  &__outline {
+    background-color: white;
+    width: 900px;
+    height: 90vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px gray;
+
+    #new-event {
+      padding: 30px;
+      height: 100%;
+
+      .top-area {
+        margin-bottom: 30px;
+
+        .create-item-1 {
+          display: flex;
+          flex-direction: column;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .name-field {
+            width: 100%;
+            height: 60px;
+            border: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .middle-area {
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: space-between;
+
+        .create-item-2 {
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .middle-field {
+            width: 100%;
+            height: 60px;
+            border: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+      }
+      .bottom-area {
+        .create-item-3 {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 30px;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .place-field {
+            width: 100%;
+            height: 60px;
+            border: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+        .create-item-4 {
+          display: flex;
+          flex-direction: column;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .detail-area {
+            width: 100%;
+            height: 150px;
+            border: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+      }
+      .create-btn-field {
+        .create-btn {
+          display: block;
+          margin: 0 auto;
+          margin-top: 30px;
+          width: 200px;
+          height: 50px;
+          background-color: #e4e6ea;
+          border-radius: 10px;
+          border: none;
+          color: #65676b;
+          cursor: pointer;
+          font-weight: bold;
+        }
+        .create-btn:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

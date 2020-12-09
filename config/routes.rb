@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  resources :events, only: :index
   resources :users, only: [:show, :edit, :update]
+  resources :events, only: [:index, :new, :create]
 end

@@ -12,19 +12,19 @@
       -#       = f.file_field :icon, class: "Hidden"
       -#       -# = image_tag @user.icon.url(:thumb)
       
-      %selection.edit-item
+      .edit-item
         = f.label :nickname, "名前", class: "Form-label"
         %p.attention
           10文字以内でお好きな名前をご使用いただけます。
         = f.text_field :nickname, placeholder: "名前を入力", maxlength: "10"
 
-      %selection.edit-item
+      .edit-item
         = f.label :genre, "得意なパフォーマンス", class: "Form-label"
         %p.attention
           ご自身の得意なことを登録してください。
         = f.text_field :genre, placeholder: "ダンス", maxlength: "10"
 
-      %selection.edit-item
+      .edit-item
         = f.label :introduction, "自己紹介", class: "Form-label"
         %p.name-attention
           140文字以内でご記入ください。
