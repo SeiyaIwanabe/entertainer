@@ -1,5 +1,5 @@
 .wrap-video {
-  height: 250px;
+  height: 300px;
   position: relative;
 
   .text {
@@ -10,10 +10,11 @@
     transform: translate(-50%, -50%); /*上下左右中央寄せ*/
     text-align: center;
 
-    .name {
-      font-size: 30px;
+    .title {
+      font-size: 4rem;
       font-weight: bold;
       color: white;
+      font-family: "Kaushan Script", cursive;
     }
     .headline {
       font-size: 20px;
