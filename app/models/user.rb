@@ -14,6 +14,9 @@ class User < ApplicationRecord
 
   has_many :events
 
+  has_many :recruiting_events, class_name: 'Event', foreign_key: 'recruiter_id'
+  has_many :applicant_events, class_name: 'Event', foreign_key: 'applicant_id'
+
   def self.guest
     find_or_create_by!(nickname: "ゲストユーザー", email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
