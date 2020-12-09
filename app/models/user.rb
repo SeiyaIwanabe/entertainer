@@ -12,6 +12,8 @@ class User < ApplicationRecord
   validates :genre, length: { maximum: 10 }
   validates :introduction, length: { maximum: 140 }
 
+  has_many :events
+
   def self.guest
     find_or_create_by!(nickname: "ゲストユーザー", email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
