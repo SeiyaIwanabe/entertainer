@@ -1,1 +1,27 @@
-テスト
+.CreateEventField
+  .CreateEventField__outline
+    = form_with(model: [@user, @event], url: new_user_event_path, local: true, id: "new-event") do |f|
+      .create-item
+        = f.label :event_name, "イベント名", class: "Form-label"
+        = f.text_field :event_name, placeholder: "踊りまつり", maxlength: "20"
+      
+      .create-item
+        = f.label :datetime, "開催日時", class: "Form-label"
+        = f.date_field :created_at, class: 'form-control'
+        
+      .create-item
+        = f.label :reward, "報酬", class: "Form-label"
+        = f.number_field :reward, autofocus: true, min: 5000, max: 100000
+      
+      .create-item
+        = f.label :place, "開催場所", class: "Form-label"
+        = f.text_field :place, placeholder: "東京都八王子市サザンスカイタワー4F", maxlength: "30"
+      
+
+      .create-item
+        = f.label :detail, "イベント詳細説明", class: "Form-label"
+        = f.text_area :detail, autofocus: true, autocomplete: "detail"
+      
+      .create-btn-field
+        = f.submit "作成", class: "create-btn"
+      

@@ -6,11 +6,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event
+    @event = Event.new
   end
 
   def create
-    @event = Event.new(event_params)
+    Event.create(event_params)
   end
       
 
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :place, :reward, :detail).includes(:user)
+    params.require(:event).permit(:event_name, :datetime, :place, :reward, :detail).merge(user_id: current_user.id)
   end
 
 end
