@@ -6,14 +6,11 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def show
-    @event = Event.find(params[:id])
-  end
-
+  
   def new
     @event = Event.new
   end
-
+  
   def create
     @event = Event.new(event_params)
     if @event.save
@@ -22,8 +19,11 @@ class EventsController < ApplicationController
       render 'new'
     end
   end
-      
-
+  
+  def show
+    @event = Event.find(params[:id])
+  end
+  
   private
   # def move_to_index
   #   unless user_signed_in?
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :place, :prefecture, :reward, :detail).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :prefecture, :reward, :detail).merge(recruiter_id: current_user.id)
   end
 
 end

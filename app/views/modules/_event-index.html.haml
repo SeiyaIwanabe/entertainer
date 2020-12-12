@@ -1,7 +1,17 @@
-= link_to 
 .EventField
   - @events.each do |event|
-    .EventField__prefecture
-      = event.prefecture
-
-
+    .EventField__info
+      .EventField__info--prefecture
+        = event.prefecture
+      .EventField__info--main
+        %p.event-name
+          = event.event_name
+        .EventHost--Area
+          %p.host
+            主催者：
+          %p.host-name
+            = event.recruiter.nickname
+        %p.enter-judge
+          申し込み可能です！
+      .event-show
+        = link_to "詳細ページ", event_path(event.id), class: "event-show-btn"
