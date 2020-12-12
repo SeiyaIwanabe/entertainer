@@ -1,9 +1,13 @@
 class EventsController < ApplicationController
-  # before_action :move_to_index, except: :index
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @user = current_user
     @events = Event.all
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -13,7 +17,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      render 'create'
+      redirect_to root_path
     else
       render 'new'
     end
@@ -28,7 +32,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :place, :reward, :detail).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :place, :prefecture, :reward, :detail).merge(recruiter_id: current_user.id)
   end
 
 end

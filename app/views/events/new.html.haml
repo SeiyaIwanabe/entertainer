@@ -18,7 +18,7 @@
       .bottom-area
         .create-item-3
           = f.label :prefecture, "開催場所", class: "Form-label"
-          = f.select :prefecture, prefectures.keys, {}, class: "prefecture-field"
+          = f.select :prefecture, Event.prefectures.keys, {}, class: "prefecture-field"
       
         .create-item-4
           = f.label :detail, "イベント詳細説明", class: "Form-label"

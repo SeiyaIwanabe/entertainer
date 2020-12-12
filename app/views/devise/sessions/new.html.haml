@@ -16,4 +16,6 @@
           = f.label :remember_me
       .actions
         = f.submit "ログイン", class: "session-btn"
+      .create-account-field
+        = link_to "アカウント作成はこちら", new_user_registration_path
     -# = render "devise/shared/links"
