@@ -1,0 +1,55 @@
+.EventField {
+  width: 100&;
+  height: auto;
+
+  &__info {
+    display: flex;
+    height: 80px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+
+    &--prefecture {
+      color: #f0add3;
+    }
+    &--main {
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+
+      .event-name {
+        font-weight: bold;
+      }
+      .EventHost--Area {
+        display: flex;
+
+        .host {
+          color: #797b7e;
+        }
+        .host-name {
+          color: #797b7e;
+        }
+        .enter-judge {
+          font-weight: bold;
+        }
+      }
+    }
+    .event-show {
+      margin: 0 20px 0 auto;
+
+      .event-show-btn {
+        height: 100%;
+        line-height: 80px;
+        text-decoration: none;
+        // border: 1px solid lightgray;
+        color: #666666;
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        font-size: large;
+      }
+      .event-show-btn:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
