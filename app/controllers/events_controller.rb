@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_user
 
   def index
-    @user = current_user
     @events = Event.all
   end
 
@@ -39,6 +39,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:event_name, :datetime, :prefecture, :reward, :detail).merge(recruiter_id: current_user.id)
+  end
+
+  def set_user
+    @user = current_user
   end
 
 end
