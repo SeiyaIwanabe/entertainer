@@ -72,6 +72,11 @@
         margin: 0 auto;
         margin-top: 20px;
         width: 200px;
+
+        .eventOwner {
+          width: 250px;
+          font-weight: bold;
+        }
         .entry-btn {
           text-decoration: none;
           display: block;
