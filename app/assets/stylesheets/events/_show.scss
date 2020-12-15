@@ -1,21 +1,69 @@
-.EventShowArea {
+.ShowEventField {
   width: 100vw;
   height: 100vh;
   background-color: #cccccc;
   position: relative;
 
-  &__Form {
+  &__outline {
     background-color: white;
-    width: 65vw;
-    height: 80vh;
+    width: 70vw;
+    height: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     position: absolute;
     margin: auto;
-    border: 1px solid white;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
+
+    .EventHostArea {
+      padding: 30px;
+      display: flex;
+
+      .explanation {
+        font-weight: bold;
+        color: #65676b;
+        font-size: large;
+        margin-right: 20px;
+      }
+      .recruiter-icon {
+        padding: 5px;
+        margin-right: 20px;
+        font-size: large;
+      }
+      .recruiter-name {
+        font-size: large;
+        font-weight: bold;
+        color: #65676b;
+      }
+    }
+    .EventImageArea {
+      width: 100%;
+      height: 200px;
+      background-image: url("event-image.png");
+      background-size: cover;
+      position: relative;
+
+      &__info {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        padding-left: 30px;
+        width: 90%;
+
+        &--date {
+          color: #fff;
+          font-weight: bold;
+          font-size: 2rem;
+          margin-right: 30px;
+        }
+        &--name {
+          font-weight: bold;
+          color: #fff;
+          font-size: 2rem;
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,22 @@
-.EventShowArea
-  .EventShowArea__Form
+.ShowEventField
+  .ShowEventField__outline
     .EventHostArea
+      %p.explanation
+        主催者
+      - if @recruiter.icon?
+        = image_tag @rectuiter.icon.url, class: "recruiter-icon"
+      - else
+        = icon("fas", "user", class: "recruiter-icon")
+      %p.recruiter-name
+        = @recruiter.nickname
+    .EventImageArea
+      .EventImageArea__info
+        .EventImageArea__info--date
+          = @event.datetime.strftime("%Y年%-m月%-d日")
+        .EventImageArea__info--name
+          = @event.event_name
+    = render partial: "modules/event-show-tab"
+        
 
+
+    

@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
-    @recruiter = @event.rectuiter
+    @recruiter = @event.recruiter
     # 後に実装↓
     # @entry = Entry.new
     # @applicants = Entry.where(event_id: @event.id).all

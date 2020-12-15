@@ -11,6 +11,7 @@
 @import "events/new";
 @import "events/create";
 @import "events/show";
+@import "modules/event-show-tab";
 @import "users/show";
 @import "users/edit";
 /*
@@ -35,11 +36,11 @@
 
 .Wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: auto;
   position: relative;
-  padding-bottom: 50px;
   box-sizing: border-box;
+  // overflow: scroll;
 }
 .Bottom-nav {
   display: none;

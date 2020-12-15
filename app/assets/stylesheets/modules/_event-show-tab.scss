@@ -1,0 +1,95 @@
+.Tab-Area {
+  height: auto;
+  width: 100%;
+  .tab-nav {
+    display: flex;
+    margin-left: 30px;
+    .tab-nav-item {
+      margin-right: 5px;
+      color: #65676b;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px 5px 0 0;
+    }
+    .tab-nav-item.is-active {
+      color: #65676b;
+      border-bottom: 3px solid lightgray;
+    }
+  }
+  .tab-contents {
+    border-top: 1px solid #ccc;
+    padding: 20px;
+    &__item {
+      display: none;
+
+      .top-Info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        justify-content: space-evenly;
+        height: 15vh;
+
+        &__date {
+          display: flex;
+          margin-bottom: 20px;
+          .clock-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+          }
+          .date {
+            font-weight: bold;
+            font-size: 1.5rem;
+          }
+        }
+        &__place {
+          display: flex;
+          .map-icon {
+            font-size: 2rem;
+            padding: 3px;
+            margin-right: 15px;
+          }
+          .place {
+            font-weight: bold;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .main-Info {
+        margin-top: 20px;
+        margin-left: 30px;
+        .heading {
+          font-weight: bold;
+          font-size: large;
+          color: #2e2e2e;
+          border-bottom: 1px solid lightgray;
+        }
+        &__detail {
+          overflow: scroll;
+        }
+      }
+      .event-entry-area {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 150px;
+        .entry-btn {
+          text-decoration: none;
+          display: block;
+          width: 200px;
+          height: 50px;
+          background-color: #e4e6ea;
+          border-radius: 10px;
+          border: none;
+          color: #65676b;
+          cursor: pointer;
+          font-weight: bold;
+          text-align: center;
+          line-height: 50px;
+        }
+        .entry-btn:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
