@@ -9,8 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 // jQuery導入
 require('jquery')
-// require('left-nav.js')
-// require('local-nav.js')
+require('event-show-tab')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
