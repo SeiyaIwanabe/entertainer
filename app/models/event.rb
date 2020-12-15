@@ -22,5 +22,7 @@ class Event < ApplicationRecord
   validates :reward, presence: true
   validates :datetime, presence: true
   validates :prefecture, presence: true
+  validates :place, presence: true
+  validates :place, length: { maximum: 30 }
   validates :detail, presence: true
 end

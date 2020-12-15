@@ -1,5 +1,15 @@
 ja:
   activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        event_name: イベント名
+        datetime: 日時
+        prefecture: 開催場所（都道府県）
+        place: 開催場所（詳細）
+        reward: 報酬
+        detail: イベント詳細情報
     attributes:
       user:
         confirmation_sent_at: パスワード確認送信時刻
@@ -27,6 +37,7 @@ ja:
         updated_at: 更新日
     models:
       user: ユーザ
+
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
