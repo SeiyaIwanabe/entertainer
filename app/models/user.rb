@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 140 }
 
   has_many :events
+  has_many :entries
 
   has_many :recruiting_events, class_name: 'Event', foreign_key: 'recruiter_id'
   has_many :applicant_events, class_name: 'Event', foreign_key: 'applicant_id'
