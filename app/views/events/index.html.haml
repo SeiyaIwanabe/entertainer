@@ -6,21 +6,21 @@
       パフォーマーと企業をつなぐマッチングサービスです
   = video_tag "/assets/videos/top.mp4", playsinline: true, controls: false, autoplay: true, loop: true, muted: true, class: "top-movie"
 
-.TabArea
-  .TabArea__inner
-    / タブメニュー
-    %input#tab_radio_A.tab_radio{checked: "checked",name: "tab_item", type: "radio"}/
-    %label.tab_menu{for: "tab_radio_A"} イベント一覧
-    %input#tab_radio_B.tab_radio{name: "tab_item", type: "radio"}/
-    %label.tab_menu{for: "tab_radio_B"} 主催者一覧
-    -# %input#tab_radio_C.tab_radio{name: "tab_item", type: "radio"}/
-    -# %label.tab_menu{for: "tab_radio_C"} フォロー
+#js-tab.Tab-Area
+  .tab-nav
+    = link_to "#", class: "tab-nav-item is-active", data: {nav: '0'} do
+      イベント一覧
+    = link_to "#", class: "tab-nav-item", data: {nav: '1'} do
+      主催者一覧
+    = link_to "#", class: "tab-nav-item", data: {nav: '2'} do
+      コメント
     / タブA 表示内容
-    #tab_contains_A.tab_contains 
+  .tab-contents
+    .tab-contents__item{ data: {content: '0' } }
       = render partial: "modules/event-index"
-    / タブB 表示内容
-    #tab_contains_B.tab_contains
-      %p CSSは、HTML文章の見た目にデザインを指定していきます。
-    / タブC 表示内容
-    -# #tab_contains_C.tab_contains
-    -#   %p JavaScriptは、ユーザーの動きに反応したり、複雑なことをします。
+    .tab-contents__item{ data: {content: '1' } }
+      タブその2
+    .tab-contents__item{ data: {content: '2' } }
+      タブその3
+    
+    
