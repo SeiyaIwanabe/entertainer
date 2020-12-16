@@ -1,0 +1,46 @@
+.Confirm-Event-Field
+  .Confirm-Event-Field__outline
+    %h2.please-check
+      以下の内容を確認してください
+    
+    .confirm-contents
+      .confirm-contents__item
+        %p.item-heading
+          イベント名：
+        %p.item-content
+          = @event.event_name
+      .confirm-contents__item
+        %p.item-heading
+          開催日時：
+        %p.item-content
+          = @event.datetime.strftime("%Y年%-m月%-d日")
+      .confirm-contents__item
+        %p.item-heading
+          報酬額：
+        %p.item-content
+          = @event.reward
+      .confirm-contents__item
+        %p.item-heading
+          開催場所（都道府県）：
+        %p.item-content
+          = @event.prefecture
+      .confirm-contents__item
+        %p.item-heading
+          開催場所（詳細）：
+        %p.item-content
+          = @event.place
+      .confirm-contents__item
+        %p.item-heading
+          イベント詳細：
+        %p.item-content
+          = @event.detail
+      
+    = form_with(model: @event, local: true, id: "confirm-event") do |f|
+      = f.hidden_field :event_name
+      = f.hidden_field :datetime
+      = f.hidden_field :reward
+      = f.hidden_field :prefecture
+      = f.hidden_field :place, as: :hidden
+      = f.hidden_field :detail, as: :hidden
+      = f.submit "作成", class: "complete-btn"
+      = f.submit "修正", name: :back, class: "back-btn"

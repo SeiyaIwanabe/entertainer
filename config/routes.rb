@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   resources :events, only: [:index, :show, :new, :create] do
+    collection do
+      post :confirm, to: 'events#confirm'
+    end
     resources :entries, only: [:create]
   end
 end

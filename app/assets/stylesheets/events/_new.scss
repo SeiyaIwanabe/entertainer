@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     position: absolute;
-    margin: auto;
+    margin: 50px auto;
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
@@ -69,28 +69,14 @@
         }
       }
       .bottom-area {
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: space-between;
+
         .create-item-3 {
           display: flex;
           flex-direction: column;
-          margin-bottom: 30px;
-
-          .Form-label {
-            color: #65676b;
-            font-weight: bold;
-            font-size: larger;
-          }
-          .prefecture-field {
-            width: 100%;
-            height: 60px;
-            border: none;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-          }
-        }
-        .create-item-4 {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 30px;
+          width: 40%;
 
           .Form-label {
             color: #65676b;
@@ -105,22 +91,22 @@
             border-radius: 10px;
           }
         }
-        .create-item-5 {
-          display: flex;
-          flex-direction: column;
+      }
+      .create-item-5 {
+        display: flex;
+        flex-direction: column;
 
-          .Form-label {
-            color: #65676b;
-            font-weight: bold;
-            font-size: larger;
-          }
-          .detail-area {
-            width: 100%;
-            height: 150px;
-            border: none;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-          }
+        .Form-label {
+          color: #65676b;
+          font-weight: bold;
+          font-size: larger;
+        }
+        .detail-area {
+          width: 100%;
+          height: 150px;
+          border: none;
+          border: 1px solid lightgray;
+          border-radius: 10px;
         }
       }
       .create-btn-field {

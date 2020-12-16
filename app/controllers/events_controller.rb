@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_user, only: [:index, :show]
+  before_action :set_user, only: [:index, :new, :confirm, :create, :show]
+  # before_action :set_event, only: [:show]
 
   def index
     @events = Event.all
@@ -11,8 +12,17 @@ class EventsController < ApplicationController
     @event = Event.new
   end
   
+  def confirm
+    @event = Event.new(event_params)
+    if @event.invalid?
+      render :new
+    end
+  end
+
   def create
     @event = Event.new(event_params)
+    render :new and return if params[:back] || !@event.save
+    # redirect_to @event
     if @event.save
       redirect_to root_path
     else
@@ -44,5 +54,9 @@ class EventsController < ApplicationController
   def set_user
     @user = current_user
   end
+
+  # def set_event
+  #   @event = Event.find(params[:id])
+  # end
 
 end
