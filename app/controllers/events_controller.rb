@@ -11,8 +11,17 @@ class EventsController < ApplicationController
     @event = Event.new
   end
   
+  def confirm
+    @event = Event.new(event_params)
+    if @event.invalid?
+      render :new
+    end
+  end
+
   def create
     @event = Event.new(event_params)
+    render :new and return if params[:back] || !@event.save
+    redirect_to @event
     if @event.save
       redirect_to root_path
     else
