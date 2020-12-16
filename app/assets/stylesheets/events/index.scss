@@ -35,6 +35,7 @@
   .tab-nav {
     display: flex;
     width: 50%;
+    margin: 0 auto;
     .tab-nav-item {
       margin-right: 5px;
       color: #65676b;
@@ -48,6 +49,7 @@
     }
     .tab-contents {
       border-top: 1px solid #ccc;
+
       &__item {
         display: none;
       }
