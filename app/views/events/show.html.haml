@@ -9,6 +9,7 @@
         = icon("fas", "user", class: "recruiter-icon")
       %p.recruiter-name
         = @recruiter.nickname
+      -if current_user.already_favorited?()
     .EventImageArea
       .EventImageArea__info
         .EventImageArea__info--date
