@@ -22,14 +22,16 @@
     = link_to "#", class: "tab-nav-item", data: {nav: '1'} do
       主催イベント
     = link_to "#", class: "tab-nav-item", data: {nav: '2'} do
-      フォロー
+      保存したイベント
   .tab-contents
     .tab-contents__item{ data: {content: '0' } }
       タブその0
     .tab-contents__item{ data: {content: '1' } }
       タブその1
     .tab-contents__item{ data: {content: '2' } }
-      タブその2
+      - @favorite_events.each do |event|
+        = event.event_name
+        = event.detail
 
 
      
