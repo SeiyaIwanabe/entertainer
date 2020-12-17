@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user, optional: true
   has_many :entries
+  has_many :favorites, dependent: :destroy
 
   enum prefecture:{
     "---":0,
@@ -16,14 +17,21 @@ class Event < ApplicationRecord
   }
 
   belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
-  # belongs_to :applicant, class_name: 'User', foreign_key: 'applicant_id', optional: true
 
-  validates :event_name, presence: true
-  validates :event_name, length: { maximum: 50 }
-  validates :reward, presence: true
-  validates :datetime, presence: true
-  validates :prefecture, presence: true
-  validates :place, presence: true
+  with_options presence: true do
+    validates :event_name
+    validates :reward
+    validates :datetime
+    validates :prefecture
+    validates :place
+    validates :detail
+  end
+  
   validates :place, length: { maximum: 30 }
-  validates :detail, presence: true
+  validates :event_name, length: { maximum: 50 }
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+
 end

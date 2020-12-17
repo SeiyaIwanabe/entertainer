@@ -1,5 +1,5 @@
-class Entry < ApplicationRecord
-  belongs_to :user, optional: true
+class Favorite < ApplicationRecord
+  belongs_to :user
   belongs_to :event
 
   validates_uniqueness_of :event_id, scope: :user_id
