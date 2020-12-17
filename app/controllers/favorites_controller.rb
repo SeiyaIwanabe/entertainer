@@ -1,13 +1,14 @@
 class FavoritesController < ApplicationController
 
   def create
-    @favorite = current_user.favorites.create(event_id: params[:event_id])
+    @favorite = current_user.favorites.build(event_id: params[:event_id])
+    @favorite.save
     redirect_back(fallback_location: root_path)
   end
 
   def destroy
-    @event = Event.find(params[:event_id])
-    @favorite = current_user.favorites.find_by(event_id: @event.id)
+    @favorite = Favorite.find_by(event_id: params[:event_id], user_id: current_user.id)
     @favorite.destroy
-    ridirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path)
+  end
 end

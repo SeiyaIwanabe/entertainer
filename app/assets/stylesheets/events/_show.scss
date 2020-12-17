@@ -20,6 +20,7 @@
     .EventHostArea {
       padding: 30px;
       display: flex;
+      position: relative;
 
       .explanation {
         font-weight: bold;
@@ -36,6 +37,29 @@
         font-size: large;
         font-weight: bold;
         color: #65676b;
+      }
+      .favorite-area {
+        width: 20%;
+        position: absolute;
+        right: 0;
+        display: flex;
+
+        .favorite-heading {
+          margin-right: 10px;
+          font-weight: bold;
+          color: #65676b;
+          padding: 6px;
+        }
+
+        .favorite-link {
+          display: block;
+          text-decoration: none;
+
+          .favorite-icon {
+            font-size: 2rem;
+            color: lightgray;
+          }
+        }
       }
     }
     .EventImageArea {

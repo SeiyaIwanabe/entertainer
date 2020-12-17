@@ -30,4 +30,8 @@ class Event < ApplicationRecord
   validates :place, length: { maximum: 30 }
   validates :event_name, length: { maximum: 50 }
 
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+
 end
