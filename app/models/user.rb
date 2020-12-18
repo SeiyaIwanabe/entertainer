@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  #画像投稿
   mount_uploader :icon, IconUploader
 
   validates :nickname, presence: true
@@ -20,6 +21,7 @@ class User < ApplicationRecord
   has_many :recruiting_events, class_name: 'Event', foreign_key: 'recruiter_id'
   has_many :applicant_events, class_name: 'Event', foreign_key: 'applicant_id'
 
+  #ゲストログイン機能のインスタンスメソッド
   def self.guest
     find_or_create_by!(nickname: "ゲストユーザー", email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
