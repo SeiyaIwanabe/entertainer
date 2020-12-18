@@ -63,5 +63,22 @@
       background-color: lightgray;
       opacity: 0.5;
     }
+    .pagination-area {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      .pagination > li > a {
+        border: none; /*枠線をなくす*/
+        color: #696969; /*文字の色を変える*/
+      }
+      .pagination > .active > a {
+        background: #93c9ff; /*背景の色を変える*/
+        border-radius: 15px; /*角を丸くする*/
+      }
+      /*ホバー時のデザイン*/
+      .pagination > li > a:hover {
+        border-radius: 15px; /*角を丸くする*/
+      }
+    }
   }
 }
