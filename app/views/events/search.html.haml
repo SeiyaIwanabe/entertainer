@@ -1,0 +1,60 @@
+.wrap-video
+  .text
+    %p.title
+      Entertainer
+    %p.headline 
+      パフォーマーと企業をつなぐマッチングサービスです
+  = video_tag "/assets/videos/top.mp4", playsinline: true, controls: false, autoplay: true, loop: true, muted: true, class: "top-movie"
+
+#js-tab.Tab-Area
+  .tab-nav
+    = link_to "#", class: "tab-nav-item is-active", data: {nav: '0'} do
+      イベント一覧
+    = link_to "#", class: "tab-nav-item", data: {nav: '1'} do
+      主催者一覧
+    = link_to "#", class: "tab-nav-item", data: {nav: '2'} do
+      コメント
+    / タブA 表示内容
+  .tab-contents
+    .tab-contents__item{ data: {content: '0' } }
+      .EventField
+        .search-area
+          = search_form_for @search, url: search_events_path do |f|
+            = f.text_field :genre_cont, placeholder: 'ジャンルで検索', class: "search-form" do
+              = icon("fas", "user", class: 'search-icon')
+            = f.submit ("イベントを検索") , class: 'search-btn', class: "search-btn"
+        .EventField__outline
+          // 検索キーワードなし: 空白だとスペースを入れいてるname全部がヒットしてしまうため
+          - if params[:q]['genre_cont'] == ""
+            %p.search-result
+              = "検索キーワードがありません。"
+            // 検索結果ありの場合
+          - elsif @search_events.present? 
+            %p.search-result
+              = "全#{@events.count}件中#{@search_events.count}件の表示"
+            // 検索数0の場合
+          - else
+            %p.search-result
+              = "検索に一致するイベントはありませんでした"    
+      
+          - @search_events.each do |event|
+            = link_to(event_path(event.id), class: "event-show-btn") do
+              .EventInfo
+                .EventInfo__prefecture
+                  = event.prefecture
+                .EventInfo__main
+                  %p.event-name
+                    = event.event_name
+                  .EventHost--Area
+                    %p.host
+                      主催者：
+                    %p.host-name
+                      = event.recruiter.nickname
+                  %p.enter-judge
+                    申し込み可能です！
+          .pagination-area
+            = paginate @search_events
+    .tab-contents__item{ data: {content: '1' } }
+      タブその2
+    .tab-contents__item{ data: {content: '2' } }
+      タブその3

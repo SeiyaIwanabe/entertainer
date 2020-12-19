@@ -16,9 +16,9 @@
           = @event.datetime.strftime("%Y年%-m月%-d日")
       .confirm-contents__item
         %p.item-heading
-          報酬額：
+          募集ジャンル：
         %p.item-content
-          = @event.reward
+          = @event.genre
       .confirm-contents__item
         %p.item-heading
           開催場所（都道府県）：
@@ -38,7 +38,7 @@
     = form_with(model: @event, local: true, id: "confirm-event") do |f|
       = f.hidden_field :event_name
       = f.hidden_field :datetime
-      = f.hidden_field :reward
+      = f.hidden_field :genre
       = f.hidden_field :prefecture
       = f.hidden_field :place, as: :hidden
       = f.hidden_field :detail, as: :hidden

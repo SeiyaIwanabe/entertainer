@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :entries, only: [:create]
     collection do
+      get :search, to: 'events#search'
       post :confirm, to: 'events#confirm'
     end
   end
