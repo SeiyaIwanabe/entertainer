@@ -12,8 +12,8 @@
           = f.date_field :datetime, class: 'form-control', class: "middle-field"
 
         .create-item-2
-          = f.label :reward, "報酬", class: "Form-label"
-          = f.number_field :reward, autofocus: true, min: 5000, max: 100000, class: "middle-field"
+          = f.label :genre, "ジャンル", class: "Form-label"
+          = f.select :genre, [ ["ダンス", "ダンス"], ["歌", "歌"], ["撮影モデル", "撮影モデル"], ["楽器演奏", "楽器演奏"], ["演技", "演技"], ["サロン・カットモデル", "サロン・カットモデル"], ["エキストラ", "エキストラ"], ["その他", "その他"] ], prompt: "募集ジャンルを選択してください", class: "middle-field"
 
       .bottom-area
         .create-item-3

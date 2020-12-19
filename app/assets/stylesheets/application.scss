@@ -11,6 +11,7 @@
 @import "events/confirm";
 @import "events/create";
 @import "events/show";
+@import "events/search";
 @import "modules/event-show-tab";
 @import "users/show";
 @import "users/edit";
@@ -40,7 +41,6 @@
   margin: auto;
   position: relative;
   box-sizing: border-box;
-  // overflow: scroll;
 }
 .Bottom-nav {
   display: none;

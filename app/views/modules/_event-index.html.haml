@@ -1,4 +1,10 @@
 .EventField
+  .search-area
+    = search_form_for @search, url: search_events_path do |f|
+      = f.text_field :genre_cont, placeholder: 'ジャンルで検索', class: "search-form" do
+        = icon("fas", "user", class: 'search-icon')
+      = f.submit ("イベントを検索") , class: 'search-btn', class: "search-btn"
+
   .EventField__outline
     - @events.each do |event|
       = link_to(event_path(event.id), class: "event-show-btn") do

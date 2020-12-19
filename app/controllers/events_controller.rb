@@ -1,10 +1,9 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_user, only: [:index, :new, :confirm, :create, :show]
-  # before_action :set_event, only: [:show]
+  before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
 
   def index
-    @events = Event.all.page(params[:page]).per(5)
+    @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
   end
 
   
@@ -39,6 +38,10 @@ class EventsController < ApplicationController
     # @comment = Comment.new
     # @comments = @event.comments.includes(:user)
   end
+
+  def search
+    @events = Event.all.includes(:recruiter)
+  end
   
   private
   # def move_to_index
@@ -48,15 +51,12 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :reward, :detail).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail).merge(recruiter_id: current_user.id)
   end
 
   def set_user
     @user = current_user
   end
 
-  # def set_event
-  #   @event = Event.find(params[:id])
-  # end
 
 end
