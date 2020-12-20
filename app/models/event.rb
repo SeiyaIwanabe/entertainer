@@ -3,6 +3,10 @@ class Event < ApplicationRecord
   has_many :entries
   has_many :favorites, dependent: :destroy
 
+  acts_as_taggable #追加
+  # acts_as_taggable_on :tags　と同じ意味のエイリアス
+  # tags のなかにIDやら名前などが入る。イメージ的には親情報。
+
   enum prefecture:{
     "---":0,
     北海道:1,
