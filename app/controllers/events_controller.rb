@@ -14,17 +14,25 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
-  
-  def confirm
+
+  def tag
     @event = Event.new(event_params)
+    @tags = ActsAsTaggableOn::Tag.all
     if @event.invalid?
       render :new
     end
   end
+  
+  def confirm
+    @event = Event.new(event_params)
+    render :new and return if params[:back]
+    render :tag if @event.invalid?(:confirm)
+  end
 
   def create
     @event = Event.new(event_params)
-    render :new and return if params[:back] || !@event.save
+    render :tag and return if params[:back]
+    render :confirm and return if !@event.save
     # redirect_to @event
     if @event.save
       redirect_to root_path
@@ -55,7 +63,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail, :tag_list).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail, tag_list: []).merge(recruiter_id: current_user.id)
   end
 
   def set_user
