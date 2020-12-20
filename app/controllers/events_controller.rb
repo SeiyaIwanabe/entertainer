@@ -4,6 +4,10 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
+    if params[:tag_name]
+      @events = Event.tagged_with("#{params[:tag_name]}").page(params[:page]).per(5)
+    end
+    @tags = Event.tag_counts_on(:tags).most_used(20)
   end
 
   
