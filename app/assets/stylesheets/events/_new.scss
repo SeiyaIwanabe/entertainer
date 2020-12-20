@@ -23,7 +23,7 @@
       height: 100%;
 
       .top-area {
-        margin-bottom: 30px;
+        padding-bottom: 30px;
 
         .create-item-1 {
           display: flex;
@@ -47,7 +47,7 @@
 
       .middle-area {
         display: flex;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
         justify-content: space-between;
 
         .create-item-2 {
@@ -80,7 +80,7 @@
       }
       .bottom-area {
         display: flex;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
         justify-content: space-between;
 
         .create-item-3 {
@@ -103,6 +103,30 @@
           }
         }
       }
+      .tag-area {
+        padding-bottom: 30px;
+
+        .create-item-4 {
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .tag-form {
+            width: 100%;
+            height: 60px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+      }
+
       .create-item-5 {
         display: flex;
         flex-direction: column;
