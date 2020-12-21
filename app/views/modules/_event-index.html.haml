@@ -13,7 +13,7 @@
     - @events.each do |event|
       = link_to(event_path(event.id), class: "event-show-btn") do
         .EventInfo
-          .EventInfo__prefecture
+          .EventInfo__prefecture  
             = event.prefecture
           .EventInfo__main
             %p.event-name
