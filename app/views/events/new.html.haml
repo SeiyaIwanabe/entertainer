@@ -1,6 +1,6 @@
 .CreateEventField
   .CreateEventField__outline
-    = form_with(model: @event, url: {action: 'confirm'}, local: true, id: "new-event") do |f|
+    = form_with(model: @event, url: tag_events_path(@event), local: true, id: "new-event") do |f|
       .top-area
         .create-item-1
           = f.label :event_name, "イベント名", class: "Form-label"
@@ -24,15 +24,15 @@
           = f.label :place, "開催場所（詳細）", class: "Form-label"
           = f.text_field :place,  maxlength: "30", class: "place-field"
       
-      .tag-area
-        .create-item-4
-          = f.label :tag_list, "タグ付け", class: "Form-label"
-          = f.text_field :tag_list, value: @event.tag_list.join(','), class: "tag-form"
+      -# .tag-area
+      -#   .create-item-4
+      -#     = f.label :tag_list, "タグ付け", class: "Form-label"
+      -#     = f.text_field :tag_list, value: @event.tag_list.join(','), class: "tag-form"
       
       .create-item-5
         = f.label :detail, "イベント詳細説明", class: "Form-label"
         = f.text_area :detail, autofocus: true, autocomplete: "detail", class: "detail-area"
       
       .create-btn-field
-        = f.submit "確認画面へ", class: "create-btn"
+        = f.submit "次へ", class: "create-btn"
       

@@ -5,9 +5,9 @@
         = icon("fas", "user", class: 'search-icon')
       = f.submit ("イベントを検索") , class: 'search-btn', class: "search-btn"
   
-  .tag-field
-    - @tags.each do |tag|
-      = link_to "#{tag.name}(#{tag.taggings_count})", events_path(tag_name: tag.name), class: "text-white"
+  -# .tag-field
+  -#   - @tags.each do |tag|
+  -#     = link_to "#{tag.name}(#{tag.taggings_count})", events_path(tag_name: tag.name), class: "text-white"
 
   .EventField__outline
     - @events.each do |event|

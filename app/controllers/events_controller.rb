@@ -1,13 +1,13 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
+  before_action :set_user, only: [:index, :new, :tag, :confirm, :create, :show, :search]
 
   def index
     @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
-    if params[:tag_name]
-      @events = Event.tagged_with("#{params[:tag_name]}").page(params[:page]).per(5)
-    end
-    @tags = Event.tag_counts_on(:tags).most_used(20)
+    # if params[:tag_name]
+    #   @events = Event.tagged_with("#{params[:tag_name]}").page(params[:page]).per(5)
+    # end
+    # @tags = ActsAsTaggableOn::Tag.all
   end
 
   
@@ -15,13 +15,13 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def tag
-    @event = Event.new(event_params)
-    @tags = ActsAsTaggableOn::Tag.all
-    if @event.invalid?
-      render :new
-    end
-  end
+  # def tag
+  #   @event = Event.new(event_params)
+  #   @tags = ActsAsTaggableOn::Tag.all
+  #   if @event.invalid?
+  #     render :new
+  #   end
+  # end
   
   def confirm
     @event = Event.new(event_params)
@@ -63,7 +63,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail, tag_list: []).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail).merge(recruiter_id: current_user.id)
   end
 
   def set_user
