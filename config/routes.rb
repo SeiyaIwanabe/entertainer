@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :entries, only: [:create]
     collection do
       get :search, to: 'events#search'
+      # post :tagging, to: 'events#tagging'
       post :confirm, to: 'events#confirm'
     end
   end

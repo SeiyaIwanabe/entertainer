@@ -35,15 +35,19 @@
   margin-bottom: 0;
 }
 
-.Wrapper {
+body {
+  height: auto;
   width: 100vw;
-  height: 100%;
-  margin: auto;
-  position: relative;
-  box-sizing: border-box;
-}
-.Bottom-nav {
-  display: none;
+  .Wrapper {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .Bottom-nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1000px) {

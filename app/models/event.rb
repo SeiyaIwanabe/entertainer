@@ -3,6 +3,12 @@ class Event < ApplicationRecord
   has_many :entries
   has_many :favorites, dependent: :destroy
 
+  belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
+
+  #タグ付け機能
+  acts_as_taggable #追加
+  
+
   enum prefecture:{
     "---":0,
     北海道:1,
@@ -17,19 +23,19 @@ class Event < ApplicationRecord
     沖縄県:47
   }
 
-  belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
 
   with_options presence: true do
     validates :event_name
-    validates :genre
     validates :datetime
     validates :prefecture
     validates :place
     validates :detail
+    validates :tag_list
   end
   
   validates :place, length: { maximum: 30 }
   validates :event_name, length: { maximum: 50 }
+
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

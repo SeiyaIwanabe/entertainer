@@ -1,6 +1,6 @@
 .CreateEventField
   .CreateEventField__outline
-    = form_with(model: @event, url: {action: 'confirm'}, local: true, id: "new-event") do |f|
+    = form_with(model: @event, url: confirm_events_path(@event), local: true, id: "new-event") do |f|
       .top-area
         .create-item-1
           = f.label :event_name, "イベント名", class: "Form-label"
@@ -12,8 +12,9 @@
           = f.date_field :datetime, class: 'form-control', class: "middle-field"
 
         .create-item-2
-          = f.label :genre, "ジャンル", class: "Form-label"
-          = f.select :genre, [ ["ダンス", "ダンス"], ["歌", "歌"], ["撮影モデル", "撮影モデル"], ["楽器演奏", "楽器演奏"], ["演技", "演技"], ["サロン・カットモデル", "サロン・カットモデル"], ["エキストラ", "エキストラ"], ["その他", "その他"] ], prompt: "募集ジャンルを選択してください", class: "middle-field"
+          = f.label :tag_list, "タグ付け"
+          = f.text_field :tag_list, value: @event.tag_list.join(','), placeholder: "ダンス,東京,・・・", class: "middle-field"
+         
 
       .bottom-area
         .create-item-3
@@ -27,7 +28,6 @@
       .create-item-5
         = f.label :detail, "イベント詳細説明", class: "Form-label"
         = f.text_area :detail, autofocus: true, autocomplete: "detail", class: "detail-area"
-      
+
       .create-btn-field
         = f.submit "確認画面へ", class: "create-btn"
-      
