@@ -42,7 +42,11 @@
           color: #65676b;
         }
         .item-content {
+          height: 20px;
+          line-height: 20px;
           font-weight: bold;
+          font-size: large;
+          // padding: 5px;
         }
       }
     }

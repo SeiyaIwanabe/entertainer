@@ -3,12 +3,11 @@ class Event < ApplicationRecord
   has_many :entries
   has_many :favorites, dependent: :destroy
 
-  has_many :tag_maps, dependent: :destroy
-  has_many :tags, through: :tag_maps
+  belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
 
-  # acts_as_taggable #追加
-  # acts_as_taggable_on :tags　と同じ意味のエイリアス
-  # tags のなかにIDやら名前などが入る。イメージ的には親情報。
+  #タグ付け機能
+  acts_as_taggable #追加
+  
 
   enum prefecture:{
     "---":0,
@@ -24,23 +23,19 @@ class Event < ApplicationRecord
     沖縄県:47
   }
 
-  belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
 
   with_options presence: true do
     validates :event_name
-    validates :genre
     validates :datetime
     validates :prefecture
     validates :place
     validates :detail
+    validates :tag_list
   end
   
   validates :place, length: { maximum: 30 }
   validates :event_name, length: { maximum: 50 }
 
-  with_options on: :confirm do
-    validates_presence_of :tag_list
-  end
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

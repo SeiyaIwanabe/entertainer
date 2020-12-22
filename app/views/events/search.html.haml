@@ -20,9 +20,32 @@
       .EventField
         .search-area
           = search_form_for @search, url: search_events_path do |f|
-            = f.text_field :genre_cont, placeholder: 'ジャンルで検索', class: "search-form" do
+            = f.text_field :event_name_cont, placeholder: 'フリーワードで検索', class: "search-form" do
               = icon("fas", "user", class: 'search-icon')
             = f.submit ("イベントを検索") , class: 'search-btn', class: "search-btn"
+        
+        .tag-field
+          .tag-field__section
+            %p.tag-word
+              ジャンルで検索
+            - @tags1.each do |genre|
+              = link_to "#{genre.name}(#{genre.taggings_count})", events_path(tag_name: genre.name), class: "tag-link"
+          .tag-field__section
+            %p.tag-word
+              開催場所で検索
+            - @tags2.each do |prefecture|
+              = link_to "#{prefecture.name}(#{prefecture.taggings_count})", events_path(tag_name: prefecture.name), class: "tag-link"
+          .tag-field__section
+            %p.tag-word
+              報酬金額で検索
+            - @tags3.each do |reward|
+              = link_to "#{reward.name}(#{reward.taggings_count})", events_path(tag_name: reward.name), class: "tag-link"
+          .tag-field__section
+            %p.tag-word
+              おすすめキーワード
+            - @tags4.each do |recommend|
+              = link_to "#{recommend.name}(#{recommend.taggings_count})", events_path(tag_name: recommend.name), class: "tag-link"
+              
         .EventField__outline
           // 検索キーワードなし: 空白だとスペースを入れいてるname全部がヒットしてしまうため
           - if params[:q]['genre_cont'] == ""

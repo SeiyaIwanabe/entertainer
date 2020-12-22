@@ -1,48 +1,45 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_user, only: [:index, :new, :tag, :confirm, :create, :show, :search]
+  before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
 
   def index
-    @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
-    # if params[:tag_name]
-    #   @events = Event.tagged_with("#{params[:tag_name]}").page(params[:page]).per(5)
-    # end
-    # @tags = ActsAsTaggableOn::Tag.all
+    @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
+    @tags2 = ActsAsTaggableOn::Tag.where(id: 11..22)
+    @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
+    @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
+    if params[:tag_name]
+      @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(5)
+      # タグ検索時にそのタグずけしているものを表示
+    else
+      @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
+    end
   end
 
-  
   def new
     @event = Event.new
+    # @tags = ActsAsTaggableOn::Tag.all
   end
-
-  # def tag
-  #   @event = Event.new(event_params)
-  #   @tags = ActsAsTaggableOn::Tag.all
-  #   if @event.invalid?
-  #     render :new
-  #   end
-  # end
   
   def confirm
     @event = Event.new(event_params)
-    render :new and return if params[:back]
-    render :tag if @event.invalid?(:confirm)
+    if @event.invalid?
+      render :new
+    end
   end
 
   def create
     @event = Event.new(event_params)
-    render :tag and return if params[:back]
-    render :confirm and return if !@event.save
-    # redirect_to @event
+    @event.recruiter_id = current_user.id
+    render :new and return if params[:back] || !@event.save
     if @event.save
       redirect_to root_path
     else
-      render 'new'
+      render :new
     end
   end
   
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by(id: params[:id])
     @recruiter = @event.recruiter
     # 後に実装↓
     # @entry = Entry.new
@@ -52,7 +49,11 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.all.includes(:recruiter)
+    @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
+    @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
+    @tags2 = ActsAsTaggableOn::Tag.where(id: 11..22)
+    @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
+    @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
   end
   
   private
@@ -63,7 +64,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :genre, :detail).merge(recruiter_id: current_user.id)
+    params.require(:event).permit(:event_name, :datetime, :prefecture, :place, :detail, :tag_list)
   end
 
   def set_user
