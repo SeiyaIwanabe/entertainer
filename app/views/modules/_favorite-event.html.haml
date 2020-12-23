@@ -1,0 +1,27 @@
+.favoriteEvent-Field
+  - if @favorite_events.present?
+    - @favorite_events.each do |event|
+      = link_to(event_path(event.id), class: "favorite-event-link") do
+        .favotite-event-outline
+          .event-datetime
+            %p.datetime
+              = event.datetime.strftime("%Y年%-m月%-d日")
+            %p.date-text
+              開催
+          .event-name
+            = event.event_name
+          .event-host-area
+            - if event.recruiter.icon.present?
+              = image_tag event.recruiter.icon.url, class: "recruiter-icon"
+            - else
+              = icon("fas", "user", class: "user-circle")
+            %p.host-text
+              主催:
+            %p.host-name
+              = event.recruiter.nickname
+          %p.event-tag
+            = event.tag_list
+
+  - else
+    %p.default-text
+      保存しているイベントはありません。

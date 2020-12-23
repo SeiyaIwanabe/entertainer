@@ -1,12 +1,12 @@
 .ShowEventField
   .ShowEventField__outline
     .EventHostArea
-      %p.explanation
+      %p.host
         主催者
       - if @recruiter.icon?
-        = image_tag @rectuiter.icon.url, class: "recruiter-icon"
+        = image_tag @recruiter.icon.url, class: "recruiter-icon"
       - else
-        = icon("fas", "user", class: "recruiter-icon")
+        = icon("fas", "user", class: "user-icon")
       %p.recruiter-name
         = @recruiter.nickname
       .favorite-area

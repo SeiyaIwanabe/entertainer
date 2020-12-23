@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @events = @user.events
-    @favorite_events = @user.favorite_events
+    # @recruiter = @event.recruiter
+    # @events = @recruiter.events
+    @favorite_events = @user.favorite_events.page(params[:page]).per(5)
   end
 
   def edit
