@@ -1,0 +1,16 @@
+.UserField
+  - @users.each do |user|
+    = link_to(user_path(user.id), class: "user-show-btn") do 
+      .outline
+        .outline__top
+          - if user.icon.present?
+            = image_tag user.icon.url, class: "user-icon"
+          - else
+            = icon("fas", "user", class: "user-circle")
+          %p.user-name
+            = user.nickname
+        %p.user-introduction
+          - if user.introduction?
+            = user.introduction
+          - else
+            最高のエンターテイメントを提供します。

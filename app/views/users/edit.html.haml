@@ -11,7 +11,9 @@
       -#       = icon("fas", "user", class: "default-icon")
       -#       = f.file_field :icon, class: "Hidden"
       -#       -# = image_tag @user.icon.url(:thumb)
-      
+      .edit-item
+        = f.label :icon, "プロフィール画像", class: "Form-label"
+        = f.file_field :icon
       .edit-item
         = f.label :nickname, "名前", class: "Form-label"
         %p.attention

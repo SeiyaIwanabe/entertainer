@@ -70,8 +70,13 @@
       border-bottom: 1px solid lightgray;
 
       .user-icon {
-        font-size: 4rem;
+        font-size: 2rem;
         margin-bottom: 10px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        border-radius: 50px;
       }
       .user-name {
         font-weight: bold;

@@ -7,7 +7,7 @@
   #nav-content 
     -# .User-info
     -#   - if @user.icon?
-    -#     = image_tag @user.icon.url
+    -#     = image_tag @user.icon.url, class: "user-icon"
     -#   - else
     -#     = icon("fas", "user", class: "user-icon")
     -#   %p.user-name

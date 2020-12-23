@@ -13,6 +13,7 @@ class EventsController < ApplicationController
     else
       @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
     end
+    @users = User.all.page(params[:page]).per(9)
   end
 
   def new
