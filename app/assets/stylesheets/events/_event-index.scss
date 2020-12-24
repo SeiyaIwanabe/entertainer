@@ -1,5 +1,5 @@
 .EventField {
-  height: 1000px;
+  height: auto;
   background-color: #f0f2f5;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
     width: 60vw;
     height: 50px;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 50px;
 
     .event_search {
       display: flex;
@@ -47,8 +47,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-top: 10%;
-    padding-bottom: 8%;
+    margin-top: 80px;
     &__section {
       .tag-word {
         font-size: large;
@@ -82,6 +81,7 @@
     box-shadow: 0 0 8px gray;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: 50px;
 
     .event-show-btn {
       text-decoration: none;
