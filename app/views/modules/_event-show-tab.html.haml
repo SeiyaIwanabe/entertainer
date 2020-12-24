@@ -31,6 +31,21 @@
             このイベントは申し込み済みです。
         - else
           = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "JoinEvent", method: :post
+
+          -# #bg
+          -#   #alert-box
+          -#     %p
+          -#       本当にイベントに申し込みますか？
+          -#     %button#ok
+          -#       申し込む
+          -#     %button#cancel
+          -#       キャンセル
+
+          -# %dialog
+          -#   %p{:style => "color: blue;"} 本当にイベントに申し込みますか？
+          -#   %button#ok 申し込む
+          -#   %button#cancel キャンセル
+
     .tab-contents__item{ data: {content: '1' } }
       タブその1
     .tab-contents__item{ data: {content: '2' } }
