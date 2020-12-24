@@ -1,26 +1,21 @@
 .CreateEventField {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #f0f2f5;
-  position: relative;
+  padding: 50px 100px 50px 100px;
 
   &__outline {
     background-color: white;
     width: 70vw;
-    height: 700px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: 50px auto;
+    height: auto;
+    margin: 0 auto;
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
 
     #new-event {
       padding: 30px;
-      height: 100%;
+      height: auto;
 
       .top-area {
         padding-bottom: 30px;
@@ -46,21 +41,64 @@
       }
 
       .middle-area {
-        display: flex;
         padding-bottom: 30px;
-        justify-content: space-between;
 
         .create-item-2 {
-          display: flex;
-          flex-direction: column;
-          width: 40%;
-
+          margin-bottom: 30px;
           .Form-label {
             color: #65676b;
             font-weight: bold;
             font-size: larger;
           }
-          .middle-field {
+          #event_start_time_1i {
+            width: 10%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+          #event_start_time_2i {
+            width: 10%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+          #event_start_time_3i {
+            width: 10%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+          #event_start_time_4i {
+            width: 10%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+          #event_start_time_5i {
+            width: 10%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+          }
+        }
+
+        .create-item-3 {
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .tag-field {
             width: 100%;
             height: 60px;
             border: none;
@@ -83,29 +121,6 @@
         padding-bottom: 30px;
         justify-content: space-between;
 
-        .create-item-3 {
-          display: flex;
-          flex-direction: column;
-          width: 40%;
-
-          .Form-label {
-            color: #65676b;
-            font-weight: bold;
-            font-size: larger;
-          }
-          .place-field {
-            width: 100%;
-            height: 60px;
-            border: none;
-            outline: none;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-          }
-        }
-      }
-      .tag-area {
-        padding-bottom: 30px;
-
         .create-item-4 {
           display: flex;
           flex-direction: column;
@@ -116,7 +131,7 @@
             font-weight: bold;
             font-size: larger;
           }
-          .tag-form {
+          .place-field {
             width: 100%;
             height: 60px;
             border: none;
@@ -146,10 +161,10 @@
         }
       }
       .create-btn-field {
+        padding-top: 20px;
         .create-btn {
           display: block;
           margin: 0 auto;
-          margin-top: 30px;
           width: 200px;
           height: 50px;
           background-color: #e4e6ea;

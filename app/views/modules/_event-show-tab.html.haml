@@ -12,7 +12,7 @@
         .top-Info__date
           = icon('fas', 'clock', class: 'clock-icon')
           %h2.date
-            = @event.datetime.strftime("%Y年%-m月%-d日")
+            = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
         .top-Info__place
           = icon('fas', 'map-marker-alt', class: 'map-icon')
           %h2.place

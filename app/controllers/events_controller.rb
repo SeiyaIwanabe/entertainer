@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :confirm, :create]
   before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
 
   def index

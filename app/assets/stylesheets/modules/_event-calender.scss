@@ -1,0 +1,22 @@
+.calender-Field {
+  height: auto;
+  background-color: #f0f2f5;
+  padding: 50px;
+
+  &__outline {
+    height: auto;
+    border: 1px solid lightgray;
+    background-color: #fff;
+  }
+
+  .calendar-show-link {
+    width: 50px;
+    height: auto;
+    text-decoration: none;
+    background-color: lightgray;
+
+    .calendar-text {
+      width: 100px;
+    }
+  }
+}

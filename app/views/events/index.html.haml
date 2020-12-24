@@ -13,7 +13,7 @@
     = link_to "#", class: "tab-nav-item", data: {nav: '1'} do
       主催者一覧
     = link_to "#", class: "tab-nav-item", data: {nav: '2'} do
-      コメント
+      カレンダー
     / タブA 表示内容
   .tab-contents
     .tab-contents__item{ data: {content: '0' } }
@@ -21,4 +21,4 @@
     .tab-contents__item{ data: {content: '1' } }
       = render partial: "modules/user-index"
     .tab-contents__item{ data: {content: '2' } }
-      タブその3
+      = render partial: "modules/event-calender"
