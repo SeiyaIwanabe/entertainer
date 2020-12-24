@@ -40,10 +40,11 @@
               .EventHost--Area
                 %p.host
                   主催者：
-                %p.host-name
+                %p.host-name  
                   = event.recruiter.nickname
               %p.enter-judge
                 申し込み可能です！
+              = event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
       .pagination-area
         = paginate @events
   %p

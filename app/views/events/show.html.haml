@@ -23,7 +23,7 @@
     .EventImageArea
       .EventImageArea__info
         .EventImageArea__info--date
-          = @event.datetime.strftime("%Y年%-m月%-d日")
+          = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
         .EventImageArea__info--name
           = @event.event_name
     = render partial: "modules/event-show-tab"
