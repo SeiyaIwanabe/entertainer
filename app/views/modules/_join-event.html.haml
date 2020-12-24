@@ -1,8 +1,8 @@
-.hostEvent-Field
-  - if @hosted_events.present?
-    - @hosted_events.each do |event|
-      = link_to(event_path(event.id), class: "host-event-link") do
-        .host-event-outline
+.entryEvent-Field
+  - if @entry_events.present?
+    - @entry_events.each do |event|
+      = link_to(event_path(event.id), class: "entry-event-link") do
+        .entry-event-outline
           .event-datetime
             %p.datetime
               = event.datetime.strftime("%Y年%-m月%-d日")
@@ -23,4 +23,4 @@
             = event.tag_list
   - else
     %p.default-text
-      主催しているイベントはありません。
+      参加しているイベントはありません。

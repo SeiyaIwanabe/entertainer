@@ -1,4 +1,79 @@
 .hostEvent-Field {
   height: auto;
   background-color: #f0f2f5;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .host-event-link {
+    width: 60vw;
+    text-decoration: none;
+    color: black;
+    margin-top: 50px;
+
+    .host-event-outline {
+      height: 150px;
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      box-shadow: 0 0 8px gray;
+      background-color: #fff;
+      padding: 20px;
+
+      .event-datetime {
+        display: flex;
+        .datetime {
+          color: #0070f3;
+          margin-right: 10px;
+        }
+        .date-text {
+          color: #0070f3;
+        }
+      }
+      .event-name {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-top: 2px;
+      }
+      .event-host-area {
+        display: flex;
+        .recruiter-icon {
+          width: 35px;
+          height: 35px;
+          border-radius: 50px;
+          margin-right: 10px;
+        }
+        .host-text {
+          height: 35px;
+          line-height: 35px;
+          color: #707276;
+          margin-right: 5px;
+        }
+        .host-name {
+          height: 35px;
+          line-height: 35px;
+          color: #707276;
+        }
+      }
+      .event-tag {
+        border: 1px solid lightgray;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: lightgray;
+        margin-top: 10px;
+      }
+    }
+    .host-event-outline:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .default-text {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+  }
 }

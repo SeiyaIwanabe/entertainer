@@ -14,7 +14,10 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 140 }
 
   has_many :events
-  has_many :entries
+
+  has_many :entries, dependent: :destroy
+  has_many :entry_events, through: :entries, source: :event
+  
   has_many :favorites, dependent: :destroy
   has_many :favorite_events, through: :favorites, source: :event
 
