@@ -26,7 +26,7 @@ class Event < ApplicationRecord
 
   with_options presence: true do
     validates :event_name
-    validates :datetime
+    validates :start_time
     validates :prefecture
     validates :place
     validates :detail
