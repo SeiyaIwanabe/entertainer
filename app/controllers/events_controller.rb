@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :confirm, :create]
+  before_action :authenticate_user!, only: [:new, :confirm, :create, :destroy]
   before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
 
   def index
@@ -18,7 +18,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    # @tags = ActsAsTaggableOn::Tag.all
   end
   
   def confirm
@@ -49,6 +48,16 @@ class EventsController < ApplicationController
     # @comments = @event.comments.includes(:user)
   end
 
+  def destroy
+    @event = Event.find_by(id: params[:id])
+    if @event.recruiter_id == current_user.id
+      @event.destroy
+    end
+    redirect_to root_path
+  end
+    
+
+
   def search
     @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
     @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
@@ -71,6 +80,5 @@ class EventsController < ApplicationController
   def set_user
     @user = current_user
   end
-
 
 end

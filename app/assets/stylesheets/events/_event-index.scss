@@ -95,15 +95,20 @@
         &__prefecture {
           color: #f0add3;
           font-weight: bold;
+          width: 50%;
         }
         &__main {
           margin-left: 50px;
           display: flex;
           flex-direction: column;
           height: 80px;
+          width: 50%;
 
           .event-name {
             font-weight: bold;
+            color: black;
+          }
+          .event-detetime {
             color: black;
           }
           .EventHost--Area {
@@ -120,6 +125,11 @@
             text-decoration: none;
             color: #797b7e;
           }
+        }
+        .event-delete-link {
+          display: block;
+          text-decoration: none;
+          border: 1px solid lightgray;
         }
       }
       .EventInfo:hover {

@@ -37,6 +37,8 @@
             .EventInfo__main
               %p.event-name
                 = event.event_name
+              %p.event-detetime
+                = event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
               .EventHost--Area
                 %p.host
                   主催者：
@@ -44,7 +46,8 @@
                   = event.recruiter.nickname
               %p.enter-judge
                 申し込み可能です！
-              = event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
+            - if current_user.id == event.recruiter_id
+              = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
       .pagination-area
         = paginate @events
   %p
