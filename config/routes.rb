@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
-  resources :events, only: [:index, :show, :new, :create] do
+  resources :events, only: [:index, :show, :new, :create, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :entries, only: [:create]
     collection do
