@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :entries
+  has_many :entries, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
   belongs_to :recruiter, class_name: 'User', foreign_key: 'recruiter_id', optional: true
