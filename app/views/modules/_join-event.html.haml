@@ -22,5 +22,16 @@
           %p.event-tag
             = event.tag_list
   - else
-    %p.default-text
-      参加しているイベントはありません。
+    .default-text
+      %p.top-text
+        イベントに参加してみよう！
+      %p.middle-text
+        まだイベントに参加した記録がないようです。
+        %br/
+        Entertainerを使って開催されたイベントに参加申請を行うと、こちらにリストアップされます。
+        %br/
+        興味のあるイベントを見つけて参加してみよう！
+      = link_to "イベントを探す", events_path, class: "event-index-link"
+
+
+    

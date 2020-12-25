@@ -13,7 +13,22 @@
         最高のエンターテイメントを提供します。
   
   .Edit-link
-    = link_to "プロフィールを編集", edit_user_path(current_user.id), class: "Edit-link-btn"
+    %button.Edit-link-btn
+      プロフィールを編集
+  
+  %label#nav-user-edit-close
+  #nav-user-edit
+    %ul
+      %li
+        %a{:href => "#"} ホーム
+      %li
+        %a{:href => "#"} サービス概要
+      %li
+        %a{:href => "#"} 実績紹介
+      %li
+        %a{:href => "#"} お問い合わせ
+  
+
 
 #js-tab.Tab-Area
   .tab-nav
@@ -31,6 +46,3 @@
       = render partial: "modules/join-event"
     .tab-contents__item{ data: {content: '2' } }
       = render partial: "modules/favorite-event"
-
-     
-  

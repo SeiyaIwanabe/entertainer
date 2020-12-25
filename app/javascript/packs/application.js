@@ -12,6 +12,7 @@ require("channels")
 require('jquery')
 require('event-show-tab')
 require('join-event')
+require('user-edit')
 
 
 
