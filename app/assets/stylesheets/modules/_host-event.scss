@@ -72,8 +72,32 @@
   }
 
   .default-text {
-    font-weight: bold;
-    font-size: large;
-    text-align: center;
+    width: 50vw;
+    border: 1px solid lightgray;
+    padding: 30px;
+    margin-bottom: 10px;
+    .top-text {
+      font-size: large;
+      color: #65676b;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .middle-text {
+      margin-bottom: 10px;
+    }
+    .event-new-link {
+      display: block;
+      color: #707276;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid lightgray;
+      width: 20%;
+      height: 40px;
+      line-height: 40px;
+      background-color: #e4e6ea;
+    }
+    .event-new-link:hover {
+      opacity: 0.7;
+    }
   }
 }

@@ -6,12 +6,13 @@
   %label#nav-close.nav-unshown{for: "nav-input"}
   #nav-content 
     .User-info
-      - if @user.icon.present?
-        = image_tag @user.icon.url, class: "user-icon"
-      - else
-        = icon("fas", "user", class: "user-icon")
-      %p.user-name
-        = @user.nickname
+      - if user_signed_in?
+        - if @user.icon.present?
+          = image_tag @user.icon.url, class: "user-icon"
+        - else
+          = icon("fas", "user", class: "user-icon")
+        %p.user-name
+          = @user.nickname
       
     %ul.user-nav
       - if user_signed_in?

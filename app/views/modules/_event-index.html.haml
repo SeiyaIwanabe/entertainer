@@ -46,8 +46,9 @@
                   = event.recruiter.nickname
               %p.enter-judge
                 申し込み可能です！
-            - if current_user.id == event.recruiter_id
-              = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
+            - if user_signed_in?
+              - if current_user.id == event.recruiter_id
+                = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
       .pagination-area
         = paginate @events
   %p
