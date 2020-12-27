@@ -41,11 +41,11 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by(id: params[:id])
     @recruiter = @event.recruiter
+    @comment = Comment.new
+    @comments = @event.comments.includes(:user)
     # 後に実装↓
     # @entry = Entry.new
     # @applicants = Entry.where(event_id: @event.id).all
-    # @comment = Comment.new
-    # @comments = @event.comments.includes(:user)
   end
 
   def destroy
