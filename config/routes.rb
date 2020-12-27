@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   resources :events, only: [:index, :show, :new, :create, :destroy] do
-    resource :favorites, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
     resources :entries, only: [:create]
+    resource :favorites, only: [:create, :destroy]
     collection do
       get :search, to: 'events#search'
       post :confirm, to: 'events#confirm'

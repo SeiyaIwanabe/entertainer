@@ -1,25 +1,21 @@
 .ShowEventField {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #cccccc;
-  position: relative;
+  padding: 50px 100px 50px 100px;
 
   &__outline {
     background-color: white;
     width: 70vw;
     height: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: 50px auto;
+    margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
 
     .EventHostArea {
       padding: 30px;
       display: flex;
+      align-items: center;
       position: relative;
 
       .host {
@@ -35,11 +31,13 @@
         height: 50px;
         border-radius: 50px;
         margin-right: 10px;
+        line-height: 50px;
       }
       .user-icon {
-        padding: 5px;
         margin-right: 20px;
-        font-size: large;
+        font-size: 2rem;
+        height: 50px;
+        line-height: 50px;
       }
       .recruiter-name {
         font-size: large;
@@ -53,8 +51,10 @@
         position: absolute;
         right: 0;
         display: flex;
+        align-items: center;
 
         .favorite-heading {
+          font-size: large;
           margin-right: 10px;
           font-weight: bold;
           color: #65676b;

@@ -5,7 +5,7 @@
         .entry-event-outline
           .event-datetime
             %p.datetime
-              = event.datetime.strftime("%Y年%-m月%-d日")
+              = event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
             %p.date-text
               開催
           .event-name
