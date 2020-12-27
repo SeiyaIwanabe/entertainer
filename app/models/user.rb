@@ -24,6 +24,8 @@ class User < ApplicationRecord
   has_many :recruiting_events, class_name: 'Event', foreign_key: 'recruiter_id'
   has_many :applicant_events, class_name: 'Event', foreign_key: 'applicant_id'
 
+  has_many :comments, dependent: :destroy
+
   #ゲストログイン機能のインスタンスメソッド
   def self.guest
     find_or_create_by!(nickname: "ゲストユーザー", email: 'guest@example.com') do |user|
