@@ -1,5 +1,9 @@
-class CreateEntries < ActiveRecord::Migration[6.0]
-  def change
+class DropEntry < ActiveRecord::Migration[6.0]
+  def up
+    drop_table :entries
+  end
+
+  def down
     create_table :entries do |t|
       t.references :event, null: false, foreign_key: true, index: false
       t.integer :applicant_id
