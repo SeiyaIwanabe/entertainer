@@ -8,30 +8,31 @@
       コメント
   .tab-contents
     .tab-contents__item{ data: {content: '0' } }
-      .top-Info
-        .top-Info__date
-          = icon('fas', 'clock', class: 'clock-icon')
-          %h2.date
-            = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
-        .top-Info__place
-          = icon('fas', 'map-marker-alt', class: 'map-icon')
-          %h2.place
-            = @event.place
-      .main-Info
-        %h2.heading
-          イベント詳細
-        .main-Info__detail
-          = @event.detail
-      .event-entry-area
-        - if @event.recruiter_id == current_user.id
-          %h1.eventOwner 
-            あなたはイベント作成者です。
-        - elsif @event.entries.where(user_id: current_user.id).exists?
-          %h1.eventOwner 
-            このイベントは申し込み済みです。
-        - else
-          = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "JoinEvent", method: :post
+      .Event-show-area
+        .top-Info
+          .top-Info__date
+            = icon('fas', 'clock', class: 'clock-icon')
+            %h2.date
+              = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
+          .top-Info__place
+            = icon('fas', 'map-marker-alt', class: 'map-icon')
+            %h2.place
+              = @event.place
+        .main-Info
+          %h2.heading
+            イベント詳細
+          .main-Info__detail
+            = @event.detail
+        .event-entry-area
+          - if @event.recruiter_id == current_user.id
+            %h1.eventOwner 
+              あなたはイベント作成者です。
+          - elsif @event.entries.where(user_id: current_user.id).exists?
+            %h1.eventOwner 
+              このイベントは申し込み済みです。
+          - else
+            = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "JoinEvent", method: :post
     .tab-contents__item{ data: {content: '1' } }
-      タブその1
+      = render partial: "modules/event-applicant"
     .tab-contents__item{ data: {content: '2' } }
       = render partial: "modules/event-comment"

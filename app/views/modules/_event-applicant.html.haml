@@ -1,0 +1,22 @@
+.applicant-Field
+  - if @applicants
+    .applicant-number
+      %h1.number
+        = "#{@applicants.count}人の参加者"
+    - @applicants.each do |applicant|
+      .applicant-index
+        = link_to user_path(applicant.user_id), class: "user-show-link" do
+          .Image
+            - if applicant.user.icon.present?
+              = image_tag applicant.user.icon, class: "user-icon"
+            - else
+              = icon("fas", "user", class: "default-icon")
+          .right-contents
+            %p.applicant-name
+              = applicant.user.nickname
+            %p.applicant-datetime
+              = icon("fas", "check-circle", class: "check-icon")
+              = "#{applicant.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒")}申請"
+  - else
+    %h1.default-message
+      このイベントにはまだ参加者がいません。

@@ -28,6 +28,8 @@
         = link_to "#{recommend.name}(#{recommend.taggings_count})", events_path(tag_name: recommend.name), class: "tag-link"
 
   - if @events.present?
+    %h1.event-heading
+      《  イベント一覧  》
     .EventField__outline
       - @events.each do |event|
         = link_to(event_path(event.id), class: "event-show-btn") do

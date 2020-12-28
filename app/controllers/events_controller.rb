@@ -44,8 +44,8 @@ class EventsController < ApplicationController
     @comment = Comment.new
     @comments = @event.comments.includes(:user)
     # 後に実装↓
-    # @entry = Entry.new
-    # @applicants = Entry.where(event_id: @event.id).all
+    @entry = Entry.new
+    @applicants = Entry.where(event_id: @event.id).all
   end
 
   def destroy
