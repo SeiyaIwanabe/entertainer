@@ -1,24 +1,36 @@
 .wrap-video {
-  height: 300px;
+  height: 400px;
   position: relative;
 
   .text {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); /*上下左右中央寄せ*/
-    text-align: center;
 
-    .title {
-      font-size: 4rem;
-      font-weight: bold;
-      color: white;
-      font-family: "Kaushan Script", cursive;
-    }
-    .headline {
-      font-size: 20px;
-      color: white;
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+
+      .typed {
+        font-size: 5rem;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+      }
+
+      .typed::after {
+        content: "|";
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
     }
   }
   .top-movie {
@@ -36,6 +48,7 @@
     display: flex;
     width: 50%;
     margin: 0 auto;
+
     .tab-nav-item {
       margin-right: 5px;
       color: #65676b;

@@ -10,9 +10,12 @@ require("channels")
 
 // jQuery導入
 require('jquery')
-require('event-show-tab')
+require('event-show-tab.js')
 require('join-event')
 require('user-edit')
+require('slide-event.js')
+// require('slick.min.js')
+
 
 
 

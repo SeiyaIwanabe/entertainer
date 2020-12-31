@@ -1,4 +1,31 @@
 .EventField
+  .Recommended-Field
+    %h1.Recommended-Field__heading
+      注目のイベント
+    %div#slide
+      %ul
+        - @recommended_events.each do |popular|
+          %li
+            = link_to event_path(popular.id), class: "popular-link" do
+              .event-photo-area
+                %p.event-name
+                  = popular.event_name
+              .event-detail-outline
+                .event-datetime
+                  = "イベント開催日    #{popular.start_time.strftime("%Y年%-m月%-d日")}"
+                .event-host-area
+                  - if popular.recruiter.icon.present?
+                    = image_tag popular.recruiter.icon.url, class: "recruiter-icon"
+                  - else
+                    = icon("fas", "user", class: "default-icon")
+                  %p.host-name
+                    = "主催者 #{popular.recruiter.nickname}"
+                .event-tag
+                  = "##{popular.tag_list}"
+            -# %button#preBtn
+            -#   = icon("fas", "chevron-left")
+            -# %button#nexBtn
+            -#   = icon("fas", "chevron-right")
   .search-area
     = search_form_for @search, url: search_events_path do |f|
       = f.text_field :event_name_cont, placeholder: 'フリーワード', class: "search-form" do
@@ -10,26 +37,26 @@
       %p.tag-word
         ジャンルで検索
       - @tags1.each do |genre|
-        = link_to "#{genre.name}(#{genre.taggings_count})", events_path(tag_name: genre.name), class: "tag-link"
+        = link_to "##{genre.name}(#{genre.taggings_count})", events_path(tag_name: genre.name), class: "tag-link"
     .tag-field__section
       %p.tag-word
         開催場所で検索
       - @tags2.each do |prefecture|
-        = link_to "#{prefecture.name}(#{prefecture.taggings_count})", events_path(tag_name: prefecture.name), class: "tag-link"
+        = link_to "##{prefecture.name}(#{prefecture.taggings_count})", events_path(tag_name: prefecture.name), class: "tag-link"
     .tag-field__section
       %p.tag-word
         報酬金額で検索
       - @tags3.each do |reward|
-        = link_to "#{reward.name}(#{reward.taggings_count})", events_path(tag_name: reward.name), class: "tag-link"
+        = link_to "##{reward.name}(#{reward.taggings_count})", events_path(tag_name: reward.name), class: "tag-link"
     .tag-field__section
       %p.tag-word
         おすすめキーワード
       - @tags4.each do |recommend|
-        = link_to "#{recommend.name}(#{recommend.taggings_count})", events_path(tag_name: recommend.name), class: "tag-link"
+        = link_to "##{recommend.name}(#{recommend.taggings_count})", events_path(tag_name: recommend.name), class: "tag-link"
 
   - if @events.present?
     %h1.event-heading
-      《  イベント一覧  》
+      イベント一覧
     .EventField__outline
       - @events.each do |event|
         = link_to(event_path(event.id), class: "event-show-btn") do
@@ -53,16 +80,3 @@
                 = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
       .pagination-area
         = paginate @events
-  %p
-    おはよう
-  %p
-    ohayou 
-  %p
-    おはよう
-  %p
-    tet
-  %p
-    test
-  %p
-    test
-  

@@ -26,12 +26,23 @@
       margin-top: 20px;
       box-shadow: 2px 2px 4px gray;
 
-      .default-icon {
-        font-size: 2rem;
-        height: 80px;
-        line-height: 80px;
-        color: black;
+      .Image {
+        height: 30px;
+        margin: auto 0;
+        .user-icon {
+          height: 30px;
+          width: 30px;
+          border-radius: 50px;
+        }
+
+        .default-icon {
+          font-size: 2rem;
+          height: 30px;
+          line-height: 30px;
+          color: black;
+        }
       }
+
       .right-contents {
         display: flex;
         flex-direction: column;

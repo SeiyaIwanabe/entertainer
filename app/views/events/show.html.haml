@@ -3,23 +3,16 @@
     .EventHostArea
       %p.host
         主催者
-      - if @recruiter.icon?
+      - if @recruiter.icon.present?
         = image_tag @recruiter.icon.url, class: "recruiter-icon"
       - else
         = icon("fas", "user", class: "user-icon")
       %p.recruiter-name
         = @recruiter.nickname
-      .favorite-area
-        - if @event.favorited_by?(current_user)
-          %p.favorite-heading
-            保存をキャンセル
-          = link_to event_favorites_path(@event), method: :delete, class: "favorite-link" do
-            = icon("fas", "star", class: "favorite-icon")
-        - else
-          %p.favorite-heading
-            イベントを保存
-          = link_to event_favorites_path(@event), method: :post, class: "favorite-link" do
-            = icon("far", "star", class: "favorite-icon")
+
+      %div{:id => "favorites_buttons_#{@event.id}"}
+        = render partial: 'modules/favorite'
+
     .EventImageArea
       .EventImageArea__info
         .EventImageArea__info--date

@@ -8,7 +8,7 @@
         = link_to user_path(applicant.user_id), class: "user-show-link" do
           .Image
             - if applicant.user.icon.present?
-              = image_tag applicant.user.icon, class: "user-icon"
+              = image_tag applicant.user.icon.url, class: "user-icon"
             - else
               = icon("fas", "user", class: "default-icon")
           .right-contents
