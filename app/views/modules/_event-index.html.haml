@@ -11,6 +11,8 @@
                 %p.event-name
                   = popular.event_name
               .event-detail-outline
+                .event-prefecture
+                  = "イベント開催地  #{popular.prefecture}"
                 .event-datetime
                   = "イベント開催日    #{popular.start_time.strftime("%Y年%-m月%-d日")}"
                 .event-host-area
@@ -22,6 +24,8 @@
                     = "主催者 #{popular.recruiter.nickname}"
                 .event-tag
                   = "##{popular.tag_list}"
+                %p.entry-count
+                  = "#{popular.entries.count}人がイベントに申し込んでいます"
             -# %button#preBtn
             -#   = icon("fas", "chevron-left")
             -# %button#nexBtn
@@ -61,7 +65,7 @@
       - @events.each do |event|
         = link_to(event_path(event.id), class: "event-show-btn") do
           .EventInfo
-            .EventInfo__prefecture  
+            .EventInfo__prefecture
               = event.prefecture
             .EventInfo__main
               %p.event-name
@@ -73,10 +77,7 @@
                   主催者：
                 %p.host-name  
                   = event.recruiter.nickname
-              %p.enter-judge
-                申し込み可能です！
-            - if user_signed_in?
-              - if current_user.id == event.recruiter_id
-                = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
+            -# - if current_user.id == event.recruiter_id
+            -#   = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
       .pagination-area
         = paginate @events

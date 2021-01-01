@@ -1,6 +1,6 @@
 .EventField {
   height: auto;
-  background-color: #f0f2f5;
+  background-color: #efefef;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -30,9 +30,10 @@
 
           .popular-link {
             display: block;
-            height: 300px;
+            height: 320px;
             background-color: #fff;
             text-decoration: none;
+            box-shadow: 0 0 8px gray;
 
             .event-photo-area {
               height: 150px;
@@ -54,6 +55,13 @@
             }
             .event-detail-outline {
               padding: 30px;
+              position: relative;
+
+              .event-prefecture {
+                font-weight: bold;
+                color: #65676b;
+                margin-bottom: 10px;
+              }
 
               .event-datetime {
                 font-weight: bold;
@@ -84,6 +92,12 @@
                 background-color: lightgray;
                 margin-top: 10px;
               }
+              .entry-count {
+                position: absolute;
+                right: 20px;
+                bottom: 30px;
+                color: #65676b;
+              }
             }
           }
           #preBtn {
@@ -106,6 +120,7 @@
     height: 50px;
     text-align: center;
     padding-top: 50px;
+    margin-top: 50px;
 
     .event_search {
       display: flex;
@@ -189,17 +204,19 @@
 
     .event-show-btn {
       text-decoration: none;
+      height: 80px;
 
       .EventInfo {
         display: flex;
         height: 80px;
         margin-bottom: 10px;
         padding: 10px;
+        position: relative;
 
         &__prefecture {
-          color: #f0add3;
+          color: #65676b;
           font-weight: bold;
-          width: 50%;
+          width: 20%;
         }
         &__main {
           margin-left: 50px;
@@ -225,15 +242,14 @@
               color: #797b7e;
             }
           }
-          .enter-judge {
-            text-decoration: none;
-            color: #797b7e;
-          }
         }
         .event-delete-link {
-          display: block;
+          // display: block;
           text-decoration: none;
           border: 1px solid lightgray;
+          position: absolute;
+          right: 20px;
+          top: 10px;
         }
       }
       .EventInfo:hover {
