@@ -12,9 +12,8 @@ require("channels")
 require('jquery')
 require('event-show-tab.js')
 require('join-event')
-require('user-edit')
+require('user-edit.js')
 require('slide-event.js')
-// require('slick.min.js')
 
 
 

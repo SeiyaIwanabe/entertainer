@@ -12,20 +12,37 @@
       - else
         最高のエンターテイメントを提供します。
   
-  .Edit-link
-    = link_to "プロフィール編集", edit_user_path(@user.id), class: "Edit-link-btn"
+  .Edit-link-area
+    %button.Edit-link-btn
+      プロフィール編集
   
-  %label#nav-user-edit-close
-  #nav-user-edit
-    %ul
-      %li
-        %a{:href => "#"} ホーム
-      %li
-        %a{:href => "#"} サービス概要
-      %li
-        %a{:href => "#"} 実績紹介
-      %li
-        %a{:href => "#"} お問い合わせ
+%label#nav-user-edit-close
+%nav.profile-nav
+  %ul
+    %li
+      = link_to edit_user_path(@user.id), class: "profile-edit-link" do
+        = icon("fas", "edit", class: "profile-edit-icon")
+        .Edit-heading
+          %p.Edit-heading__above
+            プロフィールを編集
+          %p.Edit-heading__under
+            名前や得意ジャンル、紹介文を編集出来ます
+    %li
+      = link_to icon_user_path(@user.id), class: "profile-edit-link" do
+        = icon("fas", "smile-wink", class: "profile-edit-icon")
+        .Edit-heading
+          %p.Edit-heading__above
+            アイコン編集
+          %p.Edit-heading__under
+            お好きなアイコン画像に変更できます
+    %li
+      = link_to destroy_user_session_path, method: :delete, class: "profile-edit-link" do
+        = icon("fas", "sign-out-alt", class: "profile-edit-icon")
+        .Edit-heading
+          %p.Edit-heading__above
+            ログアウト
+          %p.Edit-heading__under
+            またのご利用をお待ちしております
   
 
 

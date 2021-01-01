@@ -2,18 +2,6 @@
   .UserEditField__outline
     = form_with(model: @user, local: true, class: :EditForm) do |f|
 
-      -# .UserImage
-      -#   - if @user.icon?
-      -#     = f.label :icon, class: "UserImage__icon" do
-      -#       = f.file_field :icon, class: "Hidden"
-      -#   - else
-      -#     = f.label :icon, class: "UserImage__icon" do
-      -#       = icon("fas", "user", class: "default-icon")
-      -#       = f.file_field :icon, class: "Hidden"
-      -#       -# = image_tag @user.icon.url(:thumb)
-      .edit-item
-        = f.label :icon, "プロフィール画像", class: "Form-label"
-        = f.file_field :icon
       .edit-item
         = f.label :nickname, "名前", class: "Form-label"
         %p.attention

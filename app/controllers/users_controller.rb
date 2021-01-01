@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :icon]
 
   def show
     @hosted_events = Event.where(recruiter_id: current_user.id)
@@ -14,6 +14,9 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     redirect_to action: :show
+  end
+
+  def icon
   end
   
   private
