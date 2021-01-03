@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    flash[:notice] = "登録が完了しました。"
     redirect_to action: :show
   end
 

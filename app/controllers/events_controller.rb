@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
     @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
     if params[:tag_name]
-      # タグ検索時にそのタグずけしているものを表示
+      # タグ検索時にクリックしたタグが付与されているイベントを一覧表示
       @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(10)
     else
       @events = Event.all.includes(:recruiter).page(params[:page]).per(10)
@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   def confirm
     @event = Event.new(event_params)
     if @event.invalid?
+      flash.now[:alert] = '必要な項目を入力してください'
       render :new
     end
   end
@@ -34,7 +35,7 @@ class EventsController < ApplicationController
     @event.recruiter_id = current_user.id
     render :new and return if params[:back] || !@event.save
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'イベントを作成しました'
     else
       render :new
     end

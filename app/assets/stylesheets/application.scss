@@ -1,5 +1,4 @@
 @import "reset";
-@import "slick";
 @import "modules/calendar";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -55,6 +54,18 @@ body {
     margin: auto;
     position: relative;
     box-sizing: border-box;
+
+    .notifications {
+      color: #fff;
+      text-align: center;
+
+      .notice {
+        background-color: lightBlue;
+      }
+      .alert {
+        background-color: red;
+      }
+    }
   }
   .Bottom-nav {
     display: none;
