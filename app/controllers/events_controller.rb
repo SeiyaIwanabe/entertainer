@@ -9,9 +9,9 @@ class EventsController < ApplicationController
     @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
     if params[:tag_name]
       # タグ検索時にそのタグずけしているものを表示
-      @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(5)
+      @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(10)
     else
-      @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
+      @events = Event.all.includes(:recruiter).page(params[:page]).per(10)
       #申し込みの数が3つ以上のイベントを一覧表示
       @recommended_events = Event.joins(:entries).group(:event_id).having('count(*) >= 3')
     end
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
 
 
   def search
-    @events = Event.all.includes(:recruiter).page(params[:page]).per(5)
+    @events = Event.all.includes(:recruiter).page(params[:page]).per(10)
     @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
     @tags2 = ActsAsTaggableOn::Tag.where(id: 11..22)
     @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
@@ -81,5 +81,4 @@ class EventsController < ApplicationController
   def set_user
     @user = current_user
   end
-
 end

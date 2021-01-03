@@ -52,6 +52,14 @@
       display: flex;
       text-decoration: none;
 
+      .user-icon {
+        height: 30px;
+        width: 30px;
+        border-radius: 50px;
+        display: block;
+        margin: auto 0;
+      }
+
       .default-icon {
         font-size: 3rem;
         color: black;

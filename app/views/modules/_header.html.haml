@@ -18,8 +18,9 @@
       - if user_signed_in?
         %li.user-nav__item
           = icon("fas", "user", class: "info-icon")
-          = link_to "プロフィール", user_path(current_user), class: "profile-link"
+          = link_to "プロフィール", user_path(current_user), class: "nav-link"
         %li.user-nav__item
+          = icon("fas", "sign-out-alt", class: "info-icon")
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
       - else
         %li.user-nav__item

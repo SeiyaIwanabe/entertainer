@@ -13,7 +13,7 @@
         - @comments.each do |comment|
           = link_to user_path(comment.user_id), class: "comment-user-link" do
             - if comment.user.icon.present?
-              = image_tag comment.user.icon, class: "user-icon"
+              = image_tag comment.user.icon.url, class: "user-icon"
             - else
               = icon("fas", "user", class: "default-icon")
             %p.comment-username
