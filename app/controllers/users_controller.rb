@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to action: :show
+    redirect_to action: :show, notice: 'プロフィールを更新しました'
   end
 
   def icon
