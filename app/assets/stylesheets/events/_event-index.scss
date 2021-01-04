@@ -38,6 +38,8 @@
             .event-image-area {
               height: 150px;
               position: relative;
+              background-color: #000;
+              background: rgba(0, 0, 0, 0.8);
 
               .event-image {
                 object-fit: cover;
@@ -74,6 +76,13 @@
               }
               .event-host-area {
                 display: flex;
+
+                .recruiter-icon {
+                  height: 30px;
+                  width: 30px;
+                  border-radius: 50px;
+                  margin-right: 10px;
+                }
 
                 .default-icon {
                   height: 30px;

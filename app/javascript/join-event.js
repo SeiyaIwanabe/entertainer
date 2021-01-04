@@ -1,12 +1,21 @@
-// $(function() {
-//   $('#JoinEvent').click(function(event) {
-//     if(!confirm('本当にこのイベントに申し込みますか？')){
-//       // キャンセルの処理
-//       alert("イベントへの申込みをキャンセルしました。（次は申し込んでね♡）")
-//       return false; // 処理を終了する
-//     } else {
-//       // OKの処理
-//       alert("イベントへの申込みが完了しました！");
-//     }
-//   });
-// });
+$(document).on('turbolinks:load', function() {
+  // turbolinksを無効化したい処理
+  $(function(){
+    $('#js-JoinEvent').on('click',function(){
+      $('.js-modal-bg').fadeIn();
+      $('.modal-content').fadeIn();
+      return false;
+    });
+    //閉じるボタンが押された場合はデフォルトのlinkの効果をキャンセル
+    $('#js-modal-close').on('click',function(){
+      $('.js-modal-bg').fadeOut();
+      $('.modal-content').fadeOut();
+      return false;
+    });
+    //黒背景を押したらモーダルを閉じる
+    $(".js-modal-bg").on('click', function() {
+      $('.js-modal-bg').fadeOut();
+      $('.modal-content').fadeOut();
+    });
+  });
+});

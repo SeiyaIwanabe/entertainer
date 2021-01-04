@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     if params[:tag_name]
       # タグ検索時にクリックしたタグが付与されているイベントを一覧表示
       @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(10)
+      @recommended_events = Event.joins(:entries).group(:event_id).having('count(*) >= 3')
     else
       @events = Event.all.includes(:recruiter).page(params[:page]).per(10)
       #申し込みの数が3つ以上のイベントを一覧表示
@@ -66,6 +67,7 @@ class EventsController < ApplicationController
     @tags2 = ActsAsTaggableOn::Tag.where(id: 11..22)
     @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
     @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
+    @recommended_events = Event.joins(:entries).group(:event_id).having('count(*) >= 3')
   end
   
   private
