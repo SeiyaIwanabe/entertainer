@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-rails'
   #RSpecインストール
   gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
