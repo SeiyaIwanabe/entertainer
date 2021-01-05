@@ -8,9 +8,15 @@ class User < ApplicationRecord
   mount_uploader :icon, IconUploader
 
   validates :nickname, presence: true
+  #パスワードは半角英数字のみで８文字以上
+  VALID_PASSWORD_REGEX = /\A[\w\-]+\z/
+  validates :password, presence: true,
+                       length: { minimum: 8 },
+                       format: { with: VALID_PASSWORD_REGEX }
+
   validates :nickname, length: { maximum: 10 }
-  # validates :genre, presence: true
-  validates :genre, length: { maximum: 10 }
+  validates :nickname, length: { minimum: 2  }
+  validates :genre, length: { maximum: 20 }
   validates :introduction, length: { maximum: 140 }
 
   has_many :events, dependent: :destroy

@@ -33,6 +33,53 @@ ja:
       next: "次 &rsaquo;"
       truncate: "..."
   activerecord:
+    errors:
+      models: 
+        user: 
+          attributes:
+            nickname:
+              blank: "名前が空欄です。入力してください。"
+            email:
+              blank: "メールアドレスが空欄です。入力してください。"
+              taken: "このメールアドレスはすでに使われています。"
+            password:
+              blank: "パスワードが空欄です。入力してください。"
+            password_confirmation:
+              confirmation: "確認用パスワードが空欄です。入力してください。"
+            genre:
+              too_long: "得意ジャンルは20文字以内で登録してください。"
+            introduction:
+              too_long: "自己紹介文は140文字以内で登録してください。"
+        event:
+          attributes:
+            event_name:
+              blank: "イベント名が空欄です。入力してください。"
+              too_long: "イベント名は4文字以上50文字以内で登録してください。"
+              too_short: "イベント名は4文字以上50文字以内で登録してください。"
+            start_time:
+              blank: "開始日時が空欄です。入力してください。"
+            tag_list: 
+              blank: "タグが未入力です。入力してください。"
+            prefecture:
+              blank: "都道府県が空欄です。入力してください。"
+            place:
+              blank: "開催場所が空欄です。入力してください。"
+            detail:
+              blank: "イベント詳細説明が空欄です。入力してください。"
+        comment:
+          attributes:
+            comment:
+              blank: "コメントを記入してください。"
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        already_confirmed: は既に登録済みです。ログインしてください。
+        confirmation_period_expired: の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください。
+        expired: の有効期限が切れました。新しくリクエストしてください。
+        not_found: は見つかりませんでした。
+        not_locked: は凍結されていません。
+        not_saved:
+          one: エラーが発生したため %{resource} は保存されませんでした。
+          other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
     models:
       event: イベント
     attributes:
@@ -45,6 +92,10 @@ ja:
         detail: イベント詳細情報
     attributes:
       user:
+        nickname: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -70,6 +121,13 @@ ja:
         updated_at: 更新日
     models:
       user: ユーザ
+    attributes:
+      user:
+        nickname: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+
 
   devise:
     confirmations:
@@ -175,14 +233,3 @@ ja:
       send_instructions: アカウントの凍結解除方法を数分以内にメールでご連絡します。
       send_paranoid_instructions: アカウントが見つかった場合、アカウントの凍結解除方法を数分以内にメールでご連絡します。
       unlocked: アカウントを凍結解除しました。
-  errors:
-    messages:
-      record_invalid: "バリデーションに失敗しました: %{errors}"
-      already_confirmed: は既に登録済みです。ログインしてください。
-      confirmation_period_expired: の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください。
-      expired: の有効期限が切れました。新しくリクエストしてください。
-      not_found: は見つかりませんでした。
-      not_locked: は凍結されていません。
-      not_saved:
-        one: エラーが発生したため %{resource} は保存されませんでした。
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
