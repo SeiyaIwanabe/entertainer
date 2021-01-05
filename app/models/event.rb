@@ -34,8 +34,10 @@ class Event < ApplicationRecord
     validates :tag_list
   end
   
-  validates :place, length: { maximum: 30 }
   validates :event_name, length: { maximum: 50 }
+  validates :event_name, length: { minimum: 4 }
+  validates :place, length: { maximum: 50 }
+  validates :place, length: { minimum: 2 }
 
 
   def favorited_by?(user)

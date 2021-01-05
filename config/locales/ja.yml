@@ -41,10 +41,35 @@ ja:
               blank: "名前が空欄です。入力してください。"
             email:
               blank: "メールアドレスが空欄です。入力してください。"
+              taken: "このメールアドレスはすでに使われています。"
             password:
               blank: "パスワードが空欄です。入力してください。"
             password_confirmation:
-              blank: "確認用パスワードが空欄です。入力してください。"
+              confirmation: "確認用パスワードが空欄です。入力してください。"
+            genre:
+              too_long: "得意ジャンルは20文字以内で登録してください。"
+            introduction:
+              too_long: "自己紹介文は140文字以内で登録してください。"
+        event:
+          attributes:
+            event_name:
+              blank: "イベント名が空欄です。入力してください。"
+              too_long: "イベント名は4文字以上50文字以内で登録してください。"
+              too_short: "イベント名は4文字以上50文字以内で登録してください。"
+            start_time:
+              blank: "開始日時が空欄です。入力してください。"
+            tag_list: 
+              blank: "タグが未入力です。入力してください。"
+            prefecture:
+              blank: "都道府県が空欄です。入力してください。"
+            place:
+              blank: "開催場所が空欄です。入力してください。"
+            detail:
+              blank: "イベント詳細説明が空欄です。入力してください。"
+        comment:
+          attributes:
+            comment:
+              blank: "コメントを記入してください。"
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
         already_confirmed: は既に登録済みです。ログインしてください。
