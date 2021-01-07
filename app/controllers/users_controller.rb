@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @hosted_events = Event.where(recruiter_id: current_user.id)
     @favorite_events = @user.favorite_events
     @entry_events = @user.entry_events
-
   end
 
   def edit

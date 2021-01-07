@@ -1,6 +1,6 @@
 .Comment-Field
   - if user_signed_in?
-    = form_with(model: [@event, @comment], local: true, class: "comment-form") do |f|
+    = form_with(model: [@event, @comment], local: true, class: "comment-form", id: "js-comment-form") do |f|
       = f.label :comment, "コメント", class: "comment-label"
       = f.text_area :comment, class: "comment-area"
       = f.submit "送信", class: "comment-btn"
