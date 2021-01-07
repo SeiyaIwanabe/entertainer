@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 2021_01_01_160841) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_entries_on_event_id"
-    t.index ["user_id"], name: "index_entries_on_user_id"
-  end
-
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "event_name", null: false
     t.text "detail", null: false
@@ -96,6 +87,4 @@ ActiveRecord::Schema.define(version: 2021_01_01_160841) do
 
   add_foreign_key "comments", "events"
   add_foreign_key "comments", "users"
-  add_foreign_key "entries", "events"
-  add_foreign_key "entries", "users"
 end
