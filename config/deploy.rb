@@ -4,7 +4,6 @@ lock '3.14.1'
 
 # Capistranoのログの表示に利用する
 set :application, 'entertainer'
-set :deploy_to, '/var/portfolio/entertainer'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:SeiyaIwanabe/entertainer.git'
