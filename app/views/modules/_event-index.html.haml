@@ -9,9 +9,9 @@
             = link_to event_path(popular.id), class: "popular-link" do
               .event-image-area
                 - if popular.prefecture == "北海道"
-                  = image_tag "hokkaido.jpg", class: "event-image"
+                  = image_tag asset_path("hokkaido.jpg"), class: "event-image"
                 - elsif popular.prefecture == "青森県"
-                  = image_tag "aomori.jpg", class: "event-image"
+                  = image_tag asset_path("aomori.jpg"), class: "event-image"
                 - elsif popular.prefecture == "秋田県"
                   = image_tag "akita.jpg", class: "event-image"
                 - elsif popular.prefecture == "山形県"
@@ -23,7 +23,7 @@
                 - elsif popular.prefecture == "福島県"
                   = image_tag "hukushima.jpg", class: "event-image"
                 - elsif popular.prefecture == "東京都"
-                  = image_tag "tokyo.jpg", class: "event-image"
+                  = image_tag asset_path("tokyo.jpg"), class: "event-image"
                 - elsif popular.prefecture == "栃木県"
                   = image_tag "tochigi.jpg", class: "event-image"
                 - elsif popular.prefecture == "茨城県"
