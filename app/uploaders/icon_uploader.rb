@@ -7,7 +7,8 @@ class IconUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # 画像のアップロード先をS3に変更
+  storage :fog
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
