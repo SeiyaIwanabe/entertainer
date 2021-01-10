@@ -9,7 +9,7 @@
 #     config.fog_directory = 'bucket-for-entertainer'
 #     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/bucket-for-entertainer'
 #     # 追記
-#     # config.fog_public = false
+#     config.fog_public = false
 
 #     config.fog_credentials = {
 #       provider: 'AWS',

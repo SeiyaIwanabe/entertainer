@@ -10,15 +10,19 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def update
-    @user.update(user_params)
-    flash[:notice] = "登録が完了しました。"
-    redirect_to action: :show
-  end
-
   def icon
   end
   
+  def update
+    if @user.update(user_params)
+      flash[:notice] = "更新が完了しました。"
+      redirect_to action: :show
+    else
+      flash.now[:alert] = "更新に失敗しました。"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
   def set_user
     @user = User.find(params[:id])

@@ -44,6 +44,8 @@ ja:
               taken: "このメールアドレスはすでに使われています。"
             password:
               blank: "パスワードが空欄です。入力してください。"
+              too_short: "パスワードが短すぎます。"
+              invalid: "無効な文字が含まれています。"
             password_confirmation:
               confirmation: "確認用パスワードが空欄です。入力してください。"
             genre:
