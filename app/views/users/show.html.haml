@@ -7,7 +7,7 @@
     %p.user-name
       = @user.nickname
     %p.user-introduction
-      - if @user.introduction?
+      - if @user.introduction.present?
         = @user.introduction
       - else
         最高のエンターテイメントを提供します。
