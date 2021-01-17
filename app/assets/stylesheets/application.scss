@@ -67,43 +67,4 @@ body {
       }
     }
   }
-  .Bottom-nav {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .header__right {
-    display: none;
-  }
-  .footer {
-    display: none;
-  }
-  .Bottom-nav {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    border-top: 1px solid white;
-
-    &__outer {
-      display: flex;
-      justify-content: space-evenly;
-
-      &--inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .event-action {
-          text-decoration: none;
-
-          .event-icon {
-            font-size: large;
-            color: #666666;
-          }
-        }
-      }
-    }
-  }
 }
