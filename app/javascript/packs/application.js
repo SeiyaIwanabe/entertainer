@@ -11,10 +11,10 @@ require("channels")
 // jQuery導入
 require('jquery')
 require('event-show-tab.js')
-require('join-event.js')
-require('user-edit.js')
+// require('join-event.js')
+// require('user-edit.js')
 require('slide-event.js')
-require('notifications.js')
+// require('notifications.js')
 // require('event-comment.js')
 
 

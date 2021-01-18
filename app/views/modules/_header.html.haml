@@ -41,3 +41,14 @@
         = link_to " イベントを探す", root_path, class: "event-action-btn"
       %li.inner
         = link_to "主催する", new_event_path , class: "event-action-btn"
+
+  .Bottom-nav
+    %ul.Bottom-nav__outer
+      %li.Bottom-nav__outer--inner
+        = link_to "#", class: "event-action" do
+          = icon("fas", "calendar", class: "event-icon")
+        %p イベント一覧
+      %li.Bottom-nav__outer--inner
+        = link_to "#", class: "event-action" do
+          = icon("fas", "wrench", class: "event-icon")
+        %p イベント作成

@@ -19,14 +19,3 @@
           = content_tag(:div, value, class: key)
       = yield
       = render partial: 'modules/footer'
-
-      .Bottom-nav
-        %ul.Bottom-nav__outer
-          %li.Bottom-nav__outer--inner
-            = link_to "#", class: "event-action" do
-              = icon("fas", "calendar", class: "event-icon")
-            %p イベント一覧
-          %li.Bottom-nav__outer--inner
-            = link_to "#", class: "event-action" do
-              = icon("fas", "wrench", class: "event-icon")
-            %p イベント作成
