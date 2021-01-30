@@ -203,8 +203,9 @@
     font-size: large;
     font-weight: bold;
     color: #65676b;
-    margin-top: 100px;
+    margin-top: 150px;
   }
+
   &__outline {
     background-color: #fff;
     width: 60vw;
@@ -212,8 +213,8 @@
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
     padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-top: 30px;
 
     .event-show-btn {
       text-decoration: none;
@@ -257,12 +258,9 @@
           }
         }
         .event-delete-link {
-          // display: block;
+          display: block;
           text-decoration: none;
           border: 1px solid lightgray;
-          position: absolute;
-          right: 20px;
-          top: 10px;
         }
       }
       .EventInfo:hover {

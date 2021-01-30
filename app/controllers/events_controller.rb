@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :confirm, :create, :destroy]
-  before_action :set_user, only: [:index, :new, :confirm, :create, :show, :search]
+  before_action :authenticate_user!, only: [:new, :confirm, :create, :edit, :destroy]
+  before_action :set_user, only: [:index, :new, :confirm, :create, :show, :edit, :search]
 
   def index
     @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
@@ -49,6 +49,20 @@ class EventsController < ApplicationController
     @comments = @event.comments.includes(:user).order(created_at: :desc)
     @entry = Entry.new
     @applicants = Entry.where(event_id: @event.id).all
+  end
+
+  def edit
+    @event = Event.find_by(id: params[:id])
+  end
+
+  def update
+    @event = Event.find_by(id: params[:id])
+    @event.update(event_params)
+    if @event.save
+      redirect_to root_path, notice: 'イベントを更新しました'
+    else
+      render :edit, alert: 'イベントを更新出来ませんでした'
+    end
   end
 
   def destroy

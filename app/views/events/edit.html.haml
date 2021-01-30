@@ -1,0 +1,33 @@
+.CreateEventField
+  .CreateEventField__outline
+    = form_with(model: @event, local: true, id: "new-event") do |f|
+      .top-area
+        .create-item-1
+          = f.label :event_name, "イベント名", class: "Form-label"
+          = f.text_field :event_name,  maxlength: "50", class: "name-field"
+
+      .middle-area
+        .create-item-2
+          = f.label :start_time, "開催日時", class: "Form-label"
+          = f.datetime_select :start_time
+
+        .create-item-3
+          = f.label :tag_list, "タグ付け", class: "Form-label"
+          = f.text_field :tag_list, value: @event.tag_list.join(','), placeholder: "ダンス,東京,・・・", class: "tag-field"
+         
+
+      .bottom-area
+        .create-item-4
+          = f.label :prefecture, "開催場所（都道府県）", class: "Form-label"
+          = f.select :prefecture, Event.prefectures.keys, {}, class: "place-field"
+
+        .create-item-4
+          = f.label :place, "開催場所（詳細）", class: "Form-label"
+          = f.text_field :place,  maxlength: "30", class: "place-field"
+      
+      .create-item-5
+        = f.label :detail, "イベント詳細説明", class: "Form-label"
+        = f.text_area :detail, autofocus: true, autocomplete: "detail", class: "detail-area"
+
+      .create-btn-field
+        = f.submit "更新する", class: "create-btn"

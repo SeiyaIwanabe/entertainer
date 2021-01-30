@@ -29,10 +29,11 @@
           タグ：
         %p.item-content
           = @event.tag_list
-      .confirm-contents__item
+      
+      .confirm-detail
         %p.item-heading
-          イベント詳細：
-        %p.item-content
+          イベント詳細  
+        %p.item-detail
           = @event.detail
       
     = form_with(model: @event, local: true, id: "confirm-event") do |f|
