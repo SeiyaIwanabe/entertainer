@@ -5,6 +5,8 @@
 僕自身、大学でダンスを始めましたが、自分たちの活躍の場がほしいと悩んでいる人が大勢いました。  
 この課題を解決できないかと考え、アプリケーション制作に取り組みました。
 
+<img width="1440" alt="スクリーンショット 2021-02-01 18 13 46" src="https://user-images.githubusercontent.com/67876040/106438508-ee058a80-64b9-11eb-85fa-3eae95b25e99.png">
+
 Things you may want to cover:
 
 - Ruby version
