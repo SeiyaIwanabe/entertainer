@@ -13,7 +13,7 @@
         %p.item-heading
           開催日時：
         %p.item-content
-          = @event.start_time
+          = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
       .confirm-contents__item
         %p.item-heading
           開催場所（都道府県）：

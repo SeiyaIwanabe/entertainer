@@ -243,7 +243,7 @@
             font-weight: bold;
             color: black;
           }
-          .event-detetime {
+          .event-datetime {
             color: black;
           }
           .EventHost--Area {
@@ -257,6 +257,9 @@
             }
           }
         }
+      }
+      .EventInfo-limited {
+        width: 20%;
         .event-delete-link {
           display: block;
           text-decoration: none;

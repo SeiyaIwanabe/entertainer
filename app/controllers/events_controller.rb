@@ -53,6 +53,11 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find_by(id: params[:id])
+    if @event.recruiter_id == current_user
+      render "edit"
+    else
+      redirect_to root_path
+    end
   end
 
   def update

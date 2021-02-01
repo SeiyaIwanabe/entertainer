@@ -134,15 +134,17 @@
             .EventInfo__main
               %p.event-name
                 = event.event_name
-              %p.event-detetime
+              %p.event-datetime 
                 = event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
               .EventHost--Area
                 %p.host
                   主催者：
                 %p.host-name  
                   = event.recruiter.nickname
-            - if current_user.id == event.recruiter_id
-              = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
-              = link_to "編集する", edit_event_path(event.id), method: :get, class: "event-edit-link"
+          -# - if user_signed_in? && current_user.id == event.recruiter_id
+          -#   .EventInfo-limited
+          -#     = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
+          -#     = link_to "編集する", edit_event_path(event.id), method: :get, class: "event-edit-link"
+                
       .pagination-area
         = paginate @events

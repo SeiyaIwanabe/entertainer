@@ -1,7 +1,9 @@
-# README
+# 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ダンスや歌、楽器演奏、演技などのスキルを持つ人と企業を結ぶマッチングプラットフォームサービスです。
+プロではないが自分のスキルを活かせる環境を求めている人と広告やイベントを企画している企業をマッチングさせます。
+僕自身、大学でダンスを始めましたが、自分たちの活躍の場がほしいと悩んでいる人が大勢いました。
+この課題を解決できないかと考え、アプリケーション制作に取り組みました。
 
 Things you may want to cover:
 

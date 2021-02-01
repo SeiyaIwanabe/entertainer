@@ -21,6 +21,9 @@
               = event.recruiter.nickname
           %p.event-tag
             = "##{event.tag_list}"
+          -# .event-limited
+          -#   = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
+          -#   = link_to "編集する", edit_event_path(event.id), method: :get, class: "event-edit-link"
   - else
     .default-text
       %p.top-text
