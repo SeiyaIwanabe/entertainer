@@ -28,6 +28,62 @@ http://entertainer-sample.com/
 - カレンダー機能(作成されたイベントがカレンダーに反映)
 - ページネーション機能
 
+## 使用言語・技術一覧
+
+**フロントサイド**
+
+- Haml
+- Scss
+- jQuery
+- bootstrap4
+
+**バックエンド**
+
+- Ruby 2.6.5
+- Ruby on rails 6.0.0
+
+**使用した gem**
+
+- haml-rails
+- devise
+- font-awesome-sass
+- carrierwave
+- rmagick
+- kaminari
+- ransack
+- acts-as-taggable-on
+- simple_calendar
+
+**テスト**
+
+- Rspec
+
+**解析ツール**
+
+**データベース**
+
+- ローカル環境 → MySQL 5.6.47
+- 本番環境 → MariaDB
+
+**アプリケーションサーバー**
+
+- Unicorn
+
+**Web サーバー**
+
+- Nginx
+
+**インフラ・開発環境**
+
+- AWS(VPC,EC2,RDS,IAM,Route53,S3)
+- Capistrano
+- Rubocop
+- fommtar
+
+## ER 図
+
+<img width="995" alt="スクリーンショット 2021-02-01 19 03 40" src="https://user-images.githubusercontent.com/67876040/106443763-3e7fe680-64c0-11eb-9ea4-ea9ec6e12500.png">
+
 ![Animated GIF-downsized](https://user-images.githubusercontent.com/67876040/91416508-6ec8b680-e88a-11ea-8e60-240a65024e2b.gif)  
 新規登録はウィザード形式で、ユーザー情報、住所（お届け先）の順に登録いたします。  
 ログインは email と password の２つの情報が必要になります。
