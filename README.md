@@ -32,9 +32,9 @@ http://entertainer-sample.com/
 
 **フロントサイド**
 
-- Haml
-- Scss
-- jQuery
+- HTML/Haml
+- CSS/Scss
+- Javascript/jQuery
 - bootstrap4
 
 **バックエンド**
@@ -80,9 +80,24 @@ http://entertainer-sample.com/
 - Rubocop
 - fommtar
 
+**その他使用ツール**
+
+- テキストエディタ： Visual Studio Code
+- タスク管理： Trello
+- 作図： Lucidchart
+- Web 制作ツール：Responsively
+- 機械翻訳： DeepL
+
 ## ER 図
 
 <img width="995" alt="スクリーンショット 2021-02-01 19 03 40" src="https://user-images.githubusercontent.com/67876040/106443763-3e7fe680-64c0-11eb-9ea4-ea9ec6e12500.png">
+
+## 工夫した点
+
+実装で工夫した点は大きく 2 つあります。
+
+1. タブの実装により、なるべく１つのページで情報をまとめる
+2. イベントを探しやすいようにタグの使い方を工夫
 
 ![Animated GIF-downsized](https://user-images.githubusercontent.com/67876040/91416508-6ec8b680-e88a-11ea-8e60-240a65024e2b.gif)  
 新規登録はウィザード形式で、ユーザー情報、住所（お届け先）の順に登録いたします。  
@@ -107,10 +122,6 @@ http://entertainer-sample.com/
 
 ![Animated GIF-downsized (3)](https://user-images.githubusercontent.com/67876040/91433799-c7a24a00-e89e-11ea-90ff-df5a06d32d1f.gif)  
 最後に、必ずログアウトいただきますようお願い申し上げます。ログアウトはヘッダーもしくはマイページのサイドバーにございます。
-
-## ER 図
-
-![スクリーンショット 2020-08-27 16 47 25](https://user-images.githubusercontent.com/67876040/91431484-6462e880-e89b-11ea-96d8-ee21b10585fd.png)
 
 ## users テーブル
 
