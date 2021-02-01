@@ -1,4 +1,4 @@
-# 概要
+# アプリケーション概要
 
 ダンスや歌、楽器演奏、演技などのスキルを持つ人と企業を結ぶマッチングプラットフォームサービスです。  
 自分のスキルを活かせる環境を求めている人と広告やイベントを企画している企業をマッチングさせます。  
@@ -7,47 +7,15 @@
 
 <img width="1440" alt="スクリーンショット 2021-02-01 18 13 46" src="https://user-images.githubusercontent.com/67876040/106438508-ee058a80-64b9-11eb-85fa-3eae95b25e99.png">
 
-Things you may want to cover:
+#### URL
 
-- Ruby version
+http://entertainer-sample.com/
 
-- System dependencies
+#### ゲストログイン
 
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
-
-# Entertainer
-
-制作期間: 2020 年 11 月 25 日-12 月 20 日  
-本番環境: -----------------------
-
-Basic 認証
-
-- NAME: -----------------
-- PASS: -----------------
-
-イベント主催者用アカウント
-
-- EMAIL: --------------
-- PASS: --------------
-
-イベント参加者用アカウント
-
-- EMAIL: --------------
-- PASS: --------------
-
-## アプリ説明
+ヘッダー左のハンバーガーメニューを開いていただくとゲストログインのリンクがあります。
+そちらからゲストユーザーとしてログイン可能です。
+制作期間: 2020 年 月 25 日-12 月 20 日
 
 ### サインアップ/ログイン
 
