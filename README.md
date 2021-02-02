@@ -89,6 +89,10 @@ http://entertainer-sample.com/
 - Web 制作ツール：Responsively
 - 機械翻訳： DeepL
 
+## インフラ構成図
+
+![インフラ構成図](https://user-images.githubusercontent.com/67876040/106587680-3e99e800-658d-11eb-80b9-81d9f0e3af58.png)
+
 ## ER 図
 
 <img width="995" alt="スクリーンショット 2021-02-01 19 03 40" src="https://user-images.githubusercontent.com/67876040/106443763-3e7fe680-64c0-11eb-9ea4-ea9ec6e12500.png">
