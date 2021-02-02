@@ -80,8 +80,6 @@ http://entertainer-sample.com/
 
 - AWS(VPC,EC2,RDS,IAM,Route53,S3)
 - Capistrano
-- Rubocop
-- fommtar
 
 **その他使用ツール**
 
