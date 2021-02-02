@@ -29,7 +29,7 @@
               あなたはイベント作成者です。
           - elsif @event.entries.where(user_id: current_user.id).exists?
             %h1.eventOwner 
-              このイベントは申し込み済みです。
+              このイベントは申し込み済みです
           - else
             = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "js-JoinEvent", method: :post
 

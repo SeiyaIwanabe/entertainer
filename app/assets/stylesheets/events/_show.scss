@@ -101,3 +101,69 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .ShowEventField {
+    width: 100%;
+    padding: 50px 10px 50px 10px;
+    &__outline {
+      width: 90vw;
+
+      .EventHostArea {
+        .host {
+          font-size: 1rem;
+          margin-right: 10px;
+          height: 50px;
+          line-height: 50px;
+        }
+        .recruiter-name {
+          font-size: 0.9rem;
+          height: 50px;
+          line-height: 50px;
+        }
+        .recruiter-icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          line-height: 30px;
+        }
+        .user-icon {
+          margin-right: 20px;
+          font-size: 2rem;
+          height: 50px;
+          line-height: 50px;
+        }
+        .favorite-area {
+          width: 40%;
+          position: absolute;
+          right: 10px;
+          display: flex;
+          align-items: center;
+          .favorite-heading {
+            font-size: 0.8rem;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #65676b;
+            padding: 6px;
+          }
+        }
+      }
+      .EventImageArea {
+        width: 100%;
+        height: 200px;
+        background-image: image-url("event-image.png");
+        background-size: cover;
+        position: relative;
+        &__info {
+          &--date {
+            font-size: 0.9rem;
+            margin-right: 30px;
+          }
+          &--name {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
