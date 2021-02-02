@@ -58,7 +58,10 @@ http://entertainer-sample.com/
 
 - Rspec
 
-**解析ツール**
+**Linter/Fomatter**
+
+- Prettier
+- RuboCop
 
 **データベース**
 
