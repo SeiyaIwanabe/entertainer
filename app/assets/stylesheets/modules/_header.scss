@@ -165,10 +165,10 @@
 
 /* レスポンシブデザイン */
 @media (max-width: 480px) {
-  #nav-drawer {
-    display: none;
-  }
-  .header {
+  header.header {
+    #nav-drawer {
+      display: none;
+    }
     #nav-open {
       margin-bottom: 20px;
       padding-top: 3px;
@@ -241,13 +241,14 @@
     display: none;
   }
 
-  .Bottom-nav {
+  .header .Bottom-nav {
     display: block;
     position: fixed;
     bottom: 0;
     width: 100vw;
     border-top: 1px solid white;
-    background-color: gray;
+    background-color: #fff;
+    z-index: 100;
 
     &__outer {
       display: flex;

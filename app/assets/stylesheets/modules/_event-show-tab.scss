@@ -24,6 +24,7 @@
       .Event-show-area {
         height: auto;
         padding-bottom: 30px;
+        // position: relative;
 
         .top-Info {
           display: flex;
@@ -104,6 +105,25 @@
           .entry-btn:hover {
             opacity: 0.7;
           }
+          .close-btn {
+            text-decoration: none;
+            display: block;
+            width: 200px;
+            height: 50px;
+            background-color: #e4e6ea;
+            border-radius: 10px;
+            border: none;
+            color: #65676b;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            margin: 0 auto;
+            margin-right: 10px;
+          }
+          .close-btn:hover {
+            opacity: 0.7;
+          }
 
           .js-modal-bg {
             background: rgba(0, 0, 0, 0.8);
@@ -141,6 +161,156 @@
               margin-top: 50px;
               display: flex;
               justify-content: space-evenly;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #js-tab.Tab-Area {
+    height: auto;
+    width: 100%;
+    .tab-nav {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      .tab-nav-item {
+        margin-right: 15px;
+        color: #65676b;
+        padding: 5px 5px;
+        text-decoration: none;
+        border-radius: 5px 5px 0 0;
+        width: 75px;
+      }
+      .tab-nav-item.is-active {
+        color: #65676b;
+        border-bottom: 3px solid lightgray;
+        width: 80px;
+      }
+    }
+    .tab-contents {
+      border-top: 1px solid #ccc;
+      &__item {
+        display: none;
+
+        .Event-show-area {
+          height: auto;
+          padding-bottom: 30px;
+
+          .top-Info {
+            margin-top: 20px;
+
+            &__date {
+              display: flex;
+              margin-bottom: 20px;
+              .clock-icon {
+                height: 50px;
+                line-height: 50px;
+                font-size: 2rem;
+                margin-right: 15px;
+              }
+              .date {
+                height: 50px;
+                line-height: 50px;
+                font-weight: bold;
+                font-size: 1.5rem;
+              }
+            }
+            &__place {
+              display: flex;
+              .map-icon {
+                font-size: 2rem;
+                margin-right: 20px;
+                height: 50px;
+                line-height: 50px;
+              }
+              .place {
+                font-weight: bold;
+                font-size: 1.5rem;
+                height: 50px;
+                line-height: 50px;
+              }
+            }
+          }
+          .main-Info {
+            margin-top: 20px;
+            margin-left: 30px;
+            .heading {
+              font-weight: bold;
+              font-size: large;
+              color: #2e2e2e;
+              border-bottom: 1px solid lightgray;
+            }
+            &__detail {
+              white-space: pre-wrap;
+              word-wrap: break-word;
+            }
+          }
+          .event-entry-area {
+            display: block;
+            margin: 50px auto;
+            width: 300px;
+
+            .eventOwner {
+              font-size: 1, 2rem;
+            }
+            .entry-btn {
+              width: 150px;
+              margin: 0 auto;
+            }
+            .entry-btn:hover {
+              opacity: 0.7;
+            }
+            .close-btn {
+              text-decoration: none;
+              display: block;
+              width: 150px;
+              height: 50px;
+              background-color: #e4e6ea;
+              border-radius: 10px;
+              border: none;
+              color: #65676b;
+              cursor: pointer;
+              font-weight: bold;
+              text-align: center;
+              line-height: 50px;
+              margin: 0 auto;
+              margin-right: 10px;
+            }
+
+            .js-modal-bg {
+              background: rgba(0, 0, 0, 0.8);
+              position: fixed;
+              top: 0;
+              left: 0;
+              height: 100vh;
+              width: 100vw;
+              display: none;
+            }
+            .modal-content {
+              width: 80vw;
+              position: absolute;
+              top: 70%;
+              left: 50%;
+              padding: 30px;
+              transform: translate(-50%, -50%);
+
+              .protocol-1 {
+                font-size: 2rem;
+              }
+              .protocol-2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+              }
+              .protocol-btn-area {
+                margin-top: 50px;
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+              }
             }
           }
         }

@@ -77,8 +77,10 @@
     .tab-nav {
       display: flex;
       justify-content: center;
+      margin-left: 0;
       .tab-nav-item {
-        width: 100px;
+        width: 125px;
+        padding: 10px 5px;
       }
     }
   }

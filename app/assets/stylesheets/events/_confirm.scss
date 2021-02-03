@@ -101,3 +101,44 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .Confirm-Event-Field {
+    padding: 50px 10px 50px 10px;
+
+    .Confirm-Event-Field__outline {
+      width: 80vw;
+
+      .please-check {
+        font-size: 1.2rem;
+        width: 100%;
+      }
+      .confirm-contents {
+        margin: 50px auto;
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+
+          .item-heading {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      #confirm-event {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-evenly;
+
+        .complete-btn {
+          width: 250px;
+          margin-right: 20px;
+        }
+        .back-btn {
+          width: 250px;
+        }
+      }
+    }
+  }
+}

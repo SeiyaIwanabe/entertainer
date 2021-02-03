@@ -183,3 +183,57 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  div.CreateEventField {
+    padding: 50px 10px 50px 10px;
+
+    &__outline {
+      width: 80vw;
+      margin: 0 auto;
+
+      #new-event {
+        padding: 30px;
+        height: auto;
+
+        .middle-area {
+          padding-bottom: 30px;
+
+          .create-item-2 {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            #event_start_time_1i {
+              width: 100%;
+            }
+            #event_start_time_2i {
+              width: 100%;
+            }
+            #event_start_time_3i {
+              width: 100%;
+            }
+            #event_start_time_4i {
+              width: 100%;
+            }
+            #event_start_time_5i {
+              width: 100%;
+            }
+          }
+        }
+        .bottom-area {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 30px;
+          justify-content: space-between;
+
+          .create-item-4 {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
