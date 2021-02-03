@@ -6,27 +6,27 @@
     .confirm-contents
       .confirm-contents__item
         %p.item-heading
-          イベント名：
+          イベント名
         %p.item-content
           = @event.event_name
       .confirm-contents__item
         %p.item-heading
-          開催日時：
+          開催日時
         %p.item-content
           = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
       .confirm-contents__item
         %p.item-heading
-          開催場所（都道府県）：
+          開催場所（都道府県）
         %p.item-content
           = @event.prefecture
       .confirm-contents__item
         %p.item-heading
-          開催場所（詳細）：
+          開催場所（詳細）
         %p.item-content
           = @event.place
       .confirm-contents__item
         %p.item-heading
-          タグ：
+          タグ
         %p.item-content
           = @event.tag_list
       
