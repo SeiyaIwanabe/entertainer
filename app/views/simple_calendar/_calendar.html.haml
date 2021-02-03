@@ -1,10 +1,10 @@
 .simple-calendar
   .calendar-heading
-    = link_to t('simple_calendar.previous', default: '先月のイベント'), calendar.url_for_previous_view
+    = link_to t('simple_calendar.previous', default: '先月'), calendar.url_for_previous_view
     %span.calendar-title
       = start_date.year
       = t('date.month_names')[start_date.month]
-    = link_to t('simple_calendar.next', default: '来月のイベント'), calendar.url_for_next_view
+    = link_to t('simple_calendar.next', default: '来月'), calendar.url_for_next_view
   %table.table.table-striped
     %thead
       %tr

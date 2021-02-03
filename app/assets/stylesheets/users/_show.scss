@@ -251,27 +251,17 @@
     width: 100%;
 
     .tab-nav {
-      display: flex;
-      width: 90%;
+      width: 100%;
       .tab-nav-item {
         margin-right: 5px;
         color: #65676b;
-        padding: 10px 20px;
+        padding: 10px 5px;
         text-decoration: none;
         border-radius: 5px 5px 0 0;
-        width: 125px;
+        width: 100px;
       }
       .tab-nav-item.is-active {
-        color: #65676b;
-        border-bottom: 3px solid lightgray;
-        width: 125px;
-      }
-      .tab-contents {
-        border-top: 1px solid #ccc;
-        &__item {
-          display: none;
-          // background-color: #f0f2f5;
-        }
+        width: 100px;
       }
     }
   }

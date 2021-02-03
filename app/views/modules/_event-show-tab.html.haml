@@ -42,15 +42,18 @@
               %p 
                 ・荒天・地震・事件・事故・新型コロナウイルス感染症等の感染症・疫病流行等、参加者の安全が確保できない可能性がある場合は、本イベントを中止・中断することがあります。
                 %br/
+                %br/
                 ・本イベントを中止する場合は、公式ホームページにてご案内するとともに、お申込者の皆様にはメールでご連絡いたします。
                 %br/
+                %br/
                 ・参加申込者数が定員に達した場合は、それ以降の申込受付を中止する場合があります。
+                %br/
                 %br/
                 ・イベント中の映像・写真・記事等に関するテレビ・新聞・雑誌・インターネット等への掲載権と肖像権はすべて主催者に属します。
 
               .protocol-btn-area
-                = link_to "閉じる", "#", id: "js-modal-close", class: "entry-btn"
-                = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", method: :post
+                = link_to "閉じる", "#", id: "js-modal-close", class: "close-btn"
+                = link_to "申し込む", event_entries_path(@event), class: "entry-btn", method: :post
 
     .tab-contents__item{ data: {content: '1' } }
       = render partial: "modules/event-applicant"

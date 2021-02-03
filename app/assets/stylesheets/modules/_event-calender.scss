@@ -7,16 +7,39 @@
     height: auto;
     border: 1px solid lightgray;
     background-color: #fff;
+    .calendar-show-link {
+      width: 50px;
+      height: auto;
+      text-decoration: none;
+      background-color: lightgray;
+
+      .calendar-text {
+        width: 100px;
+      }
+    }
   }
+}
 
-  .calendar-show-link {
-    width: 50px;
-    height: auto;
-    text-decoration: none;
-    background-color: lightgray;
+@media (max-width: 480px) {
+  .calender-Field {
+    padding: 50px 5px 50px 5px;
 
-    .calendar-text {
-      width: 100px;
+    &__outline {
+      .simple-calendar {
+        .calendar-heading {
+          width: 100%;
+        }
+      }
+      .calendar-show-link {
+        width: 50px;
+        height: auto;
+        text-decoration: none;
+        background-color: lightgray;
+
+        .calendar-text {
+          width: 100px;
+        }
+      }
     }
   }
 }
