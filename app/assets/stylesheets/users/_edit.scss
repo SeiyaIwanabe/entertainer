@@ -67,3 +67,31 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .UserEditField {
+    height: auto;
+    padding: 50px 10px 50px 10px;
+    &__outline {
+      .EditForm {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .edit-item {
+          margin-bottom: 10px;
+
+          .Form-label {
+            color: #65676b;
+            font-weight: bold;
+            font-size: larger;
+          }
+          .attention {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
