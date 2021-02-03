@@ -90,11 +90,6 @@ class EventsController < ApplicationController
   end
   
   private
-  # def move_to_index
-  #   unless user_signed_in?
-  #     redirect_to action: :index
-  #   end
-  # end
 
   def event_params
     params.require(:event).permit(:event_name, :start_time, :prefecture, :place, :detail, :tag_list)

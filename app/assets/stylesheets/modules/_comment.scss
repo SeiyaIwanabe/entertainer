@@ -86,5 +86,20 @@
     .comment-content {
       display: inline-block;
     }
+    .comment-delete-btn {
+      display: block;
+      width: 40px;
+      color: #fff;
+      background-color: #2296f3;
+      outline: none;
+      border: none;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .comment-delete-btn:hover {
+      opacity: 0.7;
+    }
   }
 }
