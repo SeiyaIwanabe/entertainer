@@ -5,10 +5,14 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_back(fallback_location: root_path)
     end
-    # respond_to do |format|
-    #   format.html { redirect_back(fallback_location: root_path) }
-    #   format.json
-    # end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    if @comment.destroy
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

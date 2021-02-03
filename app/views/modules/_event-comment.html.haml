@@ -22,6 +22,9 @@
               = comment.created_at.strftime('%m月%d日%H時%M分')
           %p.comment-content
             = comment.comment
+          .list-inline-item
+            - if user_signed_in? && comment.user_id == current_user.id
+              = link_to "削除", event_comment_path(comment.event_id, comment.id), method: :delete, class: "comment-delete-btn", data: { confirm: '削除してよろしいですか？' } 
     - else
       %p
         イベントについての質問や疑問などを投稿してみましょう。
