@@ -3,6 +3,6 @@
     .icon-heading
       アイコン画像を設定しよう
     = form_with(model: @user, local: true, class: "icon-form") do |f|
-      = f.label :icon, "画像を設定する", class: "icon-label"
+      = f.label :icon, "画像を設定する", onclick: "", class: "icon-label"
       = f.file_field :icon, class: "icon-file"
       = f.submit '画像を決定', class: "icon-btn"
