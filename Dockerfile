@@ -23,7 +23,7 @@ ADD Gemfile /entertainer/Gemfile
 ADD Gemfile.lock /entertainer/Gemfile.lock
 
 # bundle installの実行
-RUN gem install bundler 
+RUN gem install bundler
 RUN bundle install
 
 # ホストのアプリケーションディレクトリ内をすべてコンテナにコピー
