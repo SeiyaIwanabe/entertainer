@@ -16,7 +16,7 @@ default: &default
   username: <%= ENV.fetch('DB_USERNAME', 'root') %>
   password: <%= ENV.fetch('DB_PASSWORD', 'password') %>
   socket: /tmp/mysql.sock
-  host: <%= ENV.fetch('DB_HOST', 'db') %>
+  host: <%= ENV.fetch('APP_DATABASE_HOST', 'db') %>
 
 development:
   <<: *default
