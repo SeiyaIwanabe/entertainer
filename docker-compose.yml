@@ -15,7 +15,7 @@ services:
       - ./entertainer/db/mysql_data:/var/lib/mysql
     volumes:
       - .:/entertainer
-    ports:
+    ports:  
       - "3000:3000"
     depends_on:
       - db
