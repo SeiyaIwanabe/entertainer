@@ -7,9 +7,9 @@
 
 <img width="1440" alt="スクリーンショット 2021-02-01 18 13 46" src="https://user-images.githubusercontent.com/67876040/106438508-ee058a80-64b9-11eb-85fa-3eae95b25e99.png">
 
-#### URL
+#### IP アドレス
 
-http://entertainer-sample.com/
+http://54.150.30.40/
 
 #### ゲストログイン
 
@@ -79,6 +79,7 @@ http://entertainer-sample.com/
 
 - AWS(VPC,EC2,RDS,IAM,Route53,S3)
 - Capistrano
+- Docker（ローカル環境）
 
 **その他使用ツール**
 
@@ -90,7 +91,7 @@ http://entertainer-sample.com/
 
 ## インフラ構成図
 
-![インフラ構成図](https://user-images.githubusercontent.com/67876040/106587680-3e99e800-658d-11eb-80b9-81d9f0e3af58.png)
+![名称未設定ファイル](https://user-images.githubusercontent.com/67876040/107331525-6097eb00-6af6-11eb-807f-a9ee10a7ca47.png)
 
 ## ER 図
 
