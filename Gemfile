@@ -36,12 +36,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  #自動デプロイ
+  #自動デプロイツール
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+
+  gem 'sqlite3'
 end
 
 group :development do
@@ -68,6 +70,7 @@ end
 
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
