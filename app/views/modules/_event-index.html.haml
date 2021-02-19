@@ -1,58 +1,59 @@
 .EventField
   .Recommended-Field
-    %h1.Recommended-Field__heading
-      注目のイベント
-    %div#slide
-      %ul
-        - @recommended_events.each do |popular|
-          %li
-            = link_to event_path(popular.id), class: "popular-link" do
-              .event-image-area
-                - if popular.prefecture == "北海道"
-                  = image_tag asset_path("hokkaido.jpg"), class: "event-image"
-                - elsif popular.prefecture == "秋田県"
-                  = image_tag "akita.jpg", class: "event-image"
-                - elsif popular.prefecture == "東京都"
-                  = image_tag "tokyo.jpg", class: "event-image"
-                - elsif popular.prefecture == "神奈川県"
-                  = image_tag "kanagawa.jpeg", class: "event-image"
-                - elsif popular.prefecture == "千葉県"
-                  = image_tag "chiba.jpg", class: "event-image"
-                - elsif popular.prefecture == "埼玉県"
-                  = image_tag "saitama.jpg", class: "event-image"
-                - elsif popular.prefecture == "静岡県"
-                  = image_tag "shizuoka.jpg", class: "event-image"
-                - elsif popular.prefecture == "愛知県"
-                  = image_tag "aichi.jpg", class: "event-image"
-                - elsif popular.prefecture == "京都府"
-                  = image_tag "kyoto.jpg", class: "event-image"
-                - elsif popular.prefecture == "大阪府"
-                  = image_tag "oosaka.jpg", class: "event-image"
-                - elsif popular.prefecture == "兵庫県"
-                  = image_tag "hyougo.jpg", class: "event-image"
+    - if @recommended_events.present
+      %h1.Recommended-Field__heading
+        注目のイベント
+      %div#slide
+        %ul
+          - @recommended_events.each do |popular|
+            %li
+              = link_to event_path(popular.id), class: "popular-link" do
+                .event-image-area
+                  - if popular.prefecture == "北海道"
+                    = image_tag asset_path("hokkaido.jpg"), class: "event-image"
+                  - elsif popular.prefecture == "秋田県"
+                    = image_tag "akita.jpg", class: "event-image"
+                  - elsif popular.prefecture == "東京都"
+                    = image_tag "tokyo.jpg", class: "event-image"
+                  - elsif popular.prefecture == "神奈川県"
+                    = image_tag "kanagawa.jpeg", class: "event-image"
+                  - elsif popular.prefecture == "千葉県"
+                    = image_tag "chiba.jpg", class: "event-image"
+                  - elsif popular.prefecture == "埼玉県"
+                    = image_tag "saitama.jpg", class: "event-image"
+                  - elsif popular.prefecture == "静岡県"
+                    = image_tag "shizuoka.jpg", class: "event-image"
+                  - elsif popular.prefecture == "愛知県"
+                    = image_tag "aichi.jpg", class: "event-image"
+                  - elsif popular.prefecture == "京都府"
+                    = image_tag "kyoto.jpg", class: "event-image"
+                  - elsif popular.prefecture == "大阪府"
+                    = image_tag "oosaka.jpg", class: "event-image"
+                  - elsif popular.prefecture == "兵庫県"
+                    = image_tag "hyougo.jpg", class: "event-image"
 
-                %p.event-name
-                  = popular.event_name
-              .event-detail-outline
-                .event-prefecture
-                  = "イベント開催地  #{popular.prefecture}"
-                .event-datetime
-                  = "イベント開催日    #{popular.start_time.strftime("%Y年%-m月%-d日")}"
-                .event-host-area
-                  - if popular.recruiter.icon.present?
-                    = image_tag popular.recruiter.icon.url, class: "recruiter-icon"
-                  - else
-                    = icon("fas", "user", class: "default-icon")
-                  %p.host-name
-                    = "主催者 #{popular.recruiter.nickname}"
-                .event-tag
-                  = "##{popular.tag_list}"
-                %p.entry-count
-                  = "#{popular.entries.count}人がイベントに申し込んでいます"
-            -# %button#preBtn
-            -#   = icon("fas", "chevron-left")
-            -# %button#nexBtn
-            -#   = icon("fas", "chevron-right")
+                  %p.event-name
+                    = popular.event_name
+                .event-detail-outline
+                  .event-prefecture
+                    = "イベント開催地  #{popular.prefecture}"
+                  .event-datetime
+                    = "イベント開催日    #{popular.start_time.strftime("%Y年%-m月%-d日")}"
+                  .event-host-area
+                    - if popular.recruiter.icon.present?
+                      = image_tag popular.recruiter.icon.url, class: "recruiter-icon"
+                    - else
+                      = icon("fas", "user", class: "default-icon")
+                    %p.host-name
+                      = "主催者 #{popular.recruiter.nickname}"
+                  .event-tag
+                    = "##{popular.tag_list}"
+                  %p.entry-count
+                    = "#{popular.entries.count}人がイベントに申し込んでいます"
+              -# %button#preBtn
+              -#   = icon("fas", "chevron-left")
+              -# %button#nexBtn
+              -#   = icon("fas", "chevron-right")
   .search-area
     = search_form_for @search, url: search_events_path do |f|
       = f.text_field :event_name_cont, placeholder: 'フリーワード', class: "search-form" do
