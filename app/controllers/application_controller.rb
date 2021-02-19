@@ -16,6 +16,4 @@ class ApplicationController < ActionController::Base
     # distinct: trueは検索結果のレコード重複しないようにします。
     # ページネーション:  .includes(:recruiter).page(params[:page]).per(5)
   end
-
-  #basic認証を後で実装
 end
