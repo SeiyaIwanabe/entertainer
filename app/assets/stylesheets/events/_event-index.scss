@@ -166,7 +166,7 @@
 
   .tag-field {
     width: 60vw;
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -176,7 +176,7 @@
         font-size: large;
         font-weight: bold;
         color: black;
-        margin-top: 20px;
+        margin-top: 100px;
       }
       .tag-link {
         display: inline-block;
