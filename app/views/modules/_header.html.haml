@@ -13,6 +13,8 @@
           = icon("fas", "user", class: "user-icon")
         %p.user-name
           = @user.nickname
+      - else
+        = icon("fas", "user", class: "user-icon")
       
     %ul.user-nav
       - if user_signed_in?

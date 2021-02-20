@@ -23,6 +23,14 @@
             = icon("far", "star", class: "favorite-icon")
 
     .EventImageArea
+      - if @event.prefecture == "東京都"
+        = image_tag "tokyo.jpg", class: "event-image"
+      - elsif @event.prefecture == "神奈川県"
+        = image_tag "kanagawa.jpeg", class: "event-image"
+      - elsif @event.prefecture == "千葉県"
+        = image_tag "chiba.jpg", class: "event-image"
+      - elsif @event.prefecture == "埼玉県"
+        = image_tag "saitama.jpg", class: "event-image"
       .EventImageArea__info
         .EventImageArea__info--date
           = @event.start_time.strftime("%Y年%m月%d日 %H:%M").to_s + "~"
