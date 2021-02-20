@@ -3,10 +3,10 @@ class EventsController < ApplicationController
   before_action :set_user, only: [:index, :new, :confirm, :create, :show, :edit, :search]
 
   def index
-    @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 10)
-    @tags2 = ActsAsTaggableOn::Tag.where(id: 11..22)
-    @tags3 = ActsAsTaggableOn::Tag.where(id: 23...29)
-    @tags4 = ActsAsTaggableOn::Tag.where(id: 29...31)
+    @tags1 = ActsAsTaggableOn::Tag.where("id < ?", 11)
+    @tags2 = ActsAsTaggableOn::Tag.where(id: 11..14)
+    @tags3 = ActsAsTaggableOn::Tag.where(id: 15...20)
+    @tags4 = ActsAsTaggableOn::Tag.where(id: 21...23)
     if params[:tag_name]
       # タグ検索時にクリックしたタグが付与されているイベントを一覧表示
       @events = Event.tagged_with("#{params[:tag_name]}").includes(:recruiter).page(params[:page]).per(10)

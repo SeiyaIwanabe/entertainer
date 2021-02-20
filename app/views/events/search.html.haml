@@ -26,11 +26,7 @@
                 %li
                   = link_to event_path(popular.id), class: "popular-link" do
                     .event-image-area
-                      - if popular.prefecture == "北海道"
-                        = image_tag "hokkaido.jpg", class: "event-image"
-                      - elsif popular.prefecture == "秋田県"
-                        = image_tag "akita.jpg", class: "event-image"
-                      - elsif popular.prefecture == "東京都"
+                      - if popular.prefecture == "東京都"
                         = image_tag "tokyo.jpg", class: "event-image"  
                       - elsif popular.prefecture == "神奈川県"
                         = image_tag "kanagawa.jpeg", class: "event-image"
@@ -38,17 +34,6 @@
                         = image_tag "chiba.jpg", class: "event-image" 
                       - elsif popular.prefecture == "埼玉県"
                         = image_tag "saitama.jpg", class: "event-image"  
-                      - elsif popular.prefecture == "静岡県"
-                        = image_tag "shizuoka.jpg", class: "event-image"
-                      - elsif popular.prefecture == "愛知県"
-                        = image_tag "aichi.jpg", class: "event-image"
-                      - elsif popular.prefecture == "京都府"
-                        = image_tag "kyoto.jpg", class: "event-image"
-                      - elsif popular.prefecture == "大阪府"
-                        = image_tag "oosaka.jpg", class: "event-image"
-                      - elsif popular.prefecture == "兵庫県"
-                        = image_tag "hyougo.jpg", class: "event-image"
-                      
                       %p.event-name
                         = popular.event_name
                     .event-detail-outline
