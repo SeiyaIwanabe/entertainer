@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     collection do
       get :search, to: 'events#search'
       post :confirm, to: 'events#confirm'
+      get :service, to: 'events#service'
     end
   end
 end
