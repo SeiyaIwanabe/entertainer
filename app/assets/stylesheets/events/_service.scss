@@ -1,0 +1,183 @@
+.ServiceField {
+  width: 100vw;
+  height: auto;
+  background-color: #f0f2f5;
+  padding: 50px 100px 50px 100px;
+
+  .Main-Title {
+    text-align: center;
+    font-weight: bold;
+    color: #12b1c0;
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .Sub-Title {
+    text-align: center;
+    color: #666666;
+  }
+
+  .ConcreteExample {
+    margin-top: 100px;
+    height: auto;
+
+    .user-side {
+      margin-bottom: 100px;
+      &__title {
+        width: 60vw;
+        margin: 0 auto;
+        text-align: center;
+        height: 50px;
+        border: 1px solid lightgray;
+        font-weight: bold;
+        font-size: 3rem;
+        background-color: #fbbc14;
+        padding-top: 5px;
+      }
+      &__howtouse {
+        width: 60vw;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+
+        .step-1 {
+          width: 30%;
+          word-wrap: break-word;
+          margin-right: 10px;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .welcome-link {
+            margin-top: 30px;
+            color: #65676b;
+            display: block;
+            border: 1px solid lightgray;
+            width: 120px;
+            height: 40px;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            background-color: #e4e6ea;
+          }
+          .welcome-link:hover {
+            opacity: 0.5;
+          }
+        }
+        .step-2 {
+          width: 30%;
+          margin-right: 10px;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .event-action-link {
+            margin-top: 30px;
+            color: #65676b;
+            display: block;
+            border: 1px solid lightgray;
+            width: 120px;
+            height: 40px;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            background-color: #e4e6ea;
+          }
+          .event-action-link:hover {
+            opacity: 0.5;
+          }
+        }
+        .step-3 {
+          width: 30%;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .recruiter-side {
+      margin-bottom: 100px;
+      &__title {
+        width: 60vw;
+        margin: 0 auto;
+        text-align: center;
+        height: 50px;
+        border: 1px solid lightgray;
+        font-weight: bold;
+        font-size: 3rem;
+        background-color: #12b1c0;
+        padding-top: 5px;
+      }
+
+      &__howtouse {
+        width: 60vw;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+
+        .step-1 {
+          width: 30%;
+          word-wrap: break-word;
+          margin-right: 10px;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .welcome-link {
+            margin-top: 30px;
+            color: #65676b;
+            display: block;
+            border: 1px solid lightgray;
+            width: 120px;
+            height: 40px;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            background-color: #e4e6ea;
+          }
+          .welcome-link:hover {
+            opacity: 0.5;
+          }
+        }
+        .step-2 {
+          width: 30%;
+          margin-right: 10px;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .event-action-link {
+            margin-top: 30px;
+            color: #65676b;
+            display: block;
+            border: 1px solid lightgray;
+            width: 120px;
+            height: 40px;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            background-color: #e4e6ea;
+          }
+          .event-action-link:hover {
+            opacity: 0.5;
+          }
+        }
+        .step-3 {
+          width: 30%;
+          .span {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

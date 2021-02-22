@@ -1,1 +1,49 @@
-テスト
+.ServiceField
+  .Main-Title
+    Entertainerはダンサーの活躍の場を広げるための
+    <br>
+    プラットフォームサービスです。
+  .Sub-Title
+    個人や企業問わず、イベントの主催やナンバーの募集をこのサービスを通じて行えます。
+    <br>
+    ダンサーは数あるイベントの中から自分に合ったイベントに応募し参加することが出来ます。
+  .ConcreteExample
+    .user-side
+      .user-side__title
+        ユーザーとしての使い方
+      .user-side__howtouse
+        .step-1
+          .span ①マイページを登録
+          <br>
+          まずはマイページを作成しましょう。主催したイベントや申し込んだイベントを管理出来ます。
+          またプロフィールを編集出来ます。
+          = link_to "新規登録", new_user_registration_path, class: "welcome-link"
+        .step-2 
+          .span ②イベントを探す
+          <br>
+          イベントにはタグがついています。自分の条件にあったイベントを見つけだすことが出来ます。
+          フリーワードでも検索可能です。
+          = link_to " イベントを探す", root_path, class: "event-action-link"
+        .step-3
+          .span ③ イベントに申込む
+          <br>
+          イベントの詳細の確認したら、注意事項を確認し、イベントに申込みましょう！
+    .recruiter-side
+      .recruiter-side__title
+        イベント主催者としての使い方
+      .recruiter-side__howtouse
+        .step-1
+          .span ①マイページを登録
+          <br>
+          まずはマイページを作成しましょう。主催したイベントや申し込んだイベントを管理出来ます。
+          またプロフィールを編集出来ます。
+          = link_to "新規登録", new_user_registration_path, class: "welcome-link"
+        .step-2 
+          .span ②イベントを主催
+          <br>
+          イベントの詳細情報を設定します。詳細内容はできる限り具体的に記述し、参加者との齟齬がないように努めましょう。また、イベントを作成すると一週間ごとに掲載料がかかります。
+          自分が作成したイベントは編集や削除が出来ます。
+        .step-3
+          .span ③ コメントを確認
+          <br>
+          イベント詳細ページにユーザーからのコメントが届きます。不明点や質問に回答して相互理解を徹底しましょう。
