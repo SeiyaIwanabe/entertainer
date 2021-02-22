@@ -181,3 +181,97 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .ServiceField {
+    padding: 50px 10px 50px 10px;
+
+    .Main-Title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .Sub-Title {
+      text-align: center;
+      color: #666666;
+    }
+    .ConcreteExample {
+      .user-side {
+        &__title {
+          width: 80vw;
+          font-size: 2rem;
+          padding-top: 8px;
+        }
+        &__howtouse {
+          width: 80vw;
+
+          .step-1 {
+            .span {
+              font-size: 1.2rem;
+            }
+            .welcome-link {
+              font-size: 0.6rem;
+              width: 80px;
+              padding-top: 13px;
+              margin-right: 10px;
+            }
+          }
+          .step-2 {
+            .span {
+              font-size: 1.2rem;
+            }
+            .event-action-link {
+              font-size: 0.6rem;
+              width: 80px;
+              padding-top: 13px;
+            }
+          }
+          .step-3 {
+            width: 30%;
+            .span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      .recruiter-side {
+        &__title {
+          width: 80vw;
+          font-size: 2rem;
+          padding-top: 8px;
+        }
+
+        &__howtouse {
+          width: 80vw;
+
+          .step-1 {
+            .span {
+              font-size: 1.2rem;
+            }
+            .welcome-link {
+              font-size: 0.6rem;
+              width: 80px;
+              padding-top: 13px;
+              margin-right: 10px;
+            }
+          }
+          .step-2 {
+            .span {
+              font-size: 1.2rem;
+            }
+            .event-action-link {
+              font-size: 0.6rem;
+              width: 80px;
+              padding-top: 13px;
+            }
+          }
+          .step-3 {
+            width: 30%;
+            .span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
