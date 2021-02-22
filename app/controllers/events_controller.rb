@@ -53,7 +53,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find_by(id: params[:id])
-    if @event.recruiter_id == current_user
+    if @event.recruiter_id == current_user.id
       render "edit"
     else
       redirect_to root_path

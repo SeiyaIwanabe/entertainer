@@ -75,6 +75,8 @@
             border-bottom: 1px solid lightgray;
           }
           &__detail {
+            white-space: pre-wrap;
+            word-wrap: break-word;
           }
         }
         .event-entry-area {

@@ -83,11 +83,6 @@
                   主催者：
                 %p.host-name  
                   = event.recruiter.nickname
-            .half
-            -# - if user_signed_in? && current_user.id == event.recruiter_id
-            -#   .limited
-            -#     = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
-            -#     = link_to "編集する", edit_event_path(event.id), method: :get, class: "event-edit-link"
                 
       .pagination-area
         = paginate @events
