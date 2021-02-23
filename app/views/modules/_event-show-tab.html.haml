@@ -33,9 +33,6 @@
                 このイベントは申し込み済みです
             - else
               = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "js-JoinEvent", method: :post
-          - else
-            .limit
-              申込みにはログインが必要です。
 
             %label.js-modal-bg
             .modal-content

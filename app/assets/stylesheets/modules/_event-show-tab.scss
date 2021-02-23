@@ -80,7 +80,7 @@
           }
         }
         .event-entry-area {
-          display: block;
+          position: relative;
           margin: 50px auto;
           width: 300px;
 
@@ -141,17 +141,19 @@
             height: 100vh;
             width: 100vw;
             display: none;
+            z-index: 10;
           }
           .modal-content {
+            position: absolute;
+            top: -25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 65vw;
             height: auto;
             display: none;
             background: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
             padding: 40px;
-            transform: translate(-50%, -50%);
+            z-index: 15;
 
             .protocol-1 {
               text-align: center;
