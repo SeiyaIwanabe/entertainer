@@ -24,14 +24,18 @@
           .main-Info__detail
             = @event.detail
         .event-entry-area
-          - if @event.recruiter_id == current_user.id
-            %h1.eventOwner 
-              あなたはイベント作成者です。
-          - elsif @event.entries.where(user_id: current_user.id).exists?
-            %h1.eventOwner 
-              このイベントは申し込み済みです
+          - if user_signed_in?
+            - if @event.recruiter_id == current_user.id
+              %h1.eventOwner 
+                あなたはイベント作成者です。
+            - elsif @event.entries.where(user_id: current_user.id).exists?
+              %h1.eventOwner 
+                このイベントは申し込み済みです
+            - else
+              = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "js-JoinEvent", method: :post
           - else
-            = link_to "イベントに申し込む", event_entries_path(@event), class: "entry-btn", id: "js-JoinEvent", method: :post
+            .limit
+              申込みにはログインが必要です。
 
             %label.js-modal-bg
             .modal-content
