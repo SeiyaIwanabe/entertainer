@@ -21,15 +21,12 @@
               = event.recruiter.nickname
           %p.event-tag
             = "##{event.tag_list}"
-          -# .event-limited
-          -#   = link_to "削除する", event_path(event.id), method: :delete, class: "event-delete-link"
-          -#   = link_to "編集する", edit_event_path(event.id), method: :get, class: "event-edit-link"
   - else
     .default-text
       %p.top-text
         イベントの開催に興味のある方へ
       %p.middle-text
-        GameHintでイベントを開催して参加者を募集することが可能です。
+        Entertainerでイベントを開催して参加者を募集することが可能です。
         %br/
         イベントを主催してエンターテイメントの世界を盛り上げよう！
       = link_to "イベントを主催する", new_event_path, class: "event-new-link"
