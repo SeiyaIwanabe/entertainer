@@ -84,6 +84,10 @@
         .event-delete-link:hover {
           opacity: 0.5;
         }
+      }
+      .module-favorite {
+        display: flex;
+        align-items: center;
 
         .favorite-heading {
           font-size: large;
@@ -92,7 +96,6 @@
           color: #65676b;
           padding: 6px;
         }
-
         .favorite-link {
           display: block;
           text-decoration: none;
